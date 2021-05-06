@@ -1,15 +1,16 @@
+import Head from "next/head";
+
 import { Spotify } from "../components/spotify";
 import { Consts } from "../misc/consts";
 
 export default function Home() {
   return (
     <div>
+      <Head>
+        <title>DEVLOOSKIE | home</title>
+      </Head>
       <nav>
-        <img
-          src='./public/favicon.ico'
-          alt="DEVLOOSKIE'S LOGO"
-          className='logo'
-        />
+        <img src='./logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
         <h6>DEVLOOSKIE</h6>
       </nav>
       <main>

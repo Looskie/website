@@ -11,7 +11,7 @@ export const Spotify = () => {
       <img
         src={lanyard.spotify?.album_art_url}
         alt={lanyard.spotify?.song}
-        className='spotify-albumArt'
+        className='spotifyAlbumArt'
       />
       <div className='spotifyDetails'>
         <span className='listeningNow'>listening now...</span>
