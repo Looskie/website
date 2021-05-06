@@ -21,10 +21,11 @@ export default function Home() {
         <span className='headingStarter'>//</span>
         <h1>ABOUT</h1>
         <p>
-          Hi, I'm Cody, a 16 y/o fullstack webdeveloper and designer. I love
-          creating things for the web and tools for people all over the world to
-          use. I've contributed to many Open Source Software(d) organizations,
-          and do "intern" work for two, dahliaOS and BlissROMS.
+          Hi, I&apos;m Cody, a 16 y/o fullstack webdeveloper and designer. I
+          love creating things for the web and tools for people all over the
+          world to use. I&apos;ve contributed to many Open Source Software(d)
+          organizations, and do &quot;intern&quot; work for two, dahliaOS and
+          BlissROMS.
         </p>
 
         {/* Looskie fix */}
