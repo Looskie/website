@@ -50,7 +50,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  width: 8vw;
+  width: 100px;
   text-align: center;
 }
 
@@ -60,7 +60,7 @@ nav {
 
 h6 {
   margin-bottom: 150px;
-  font-size: 45px;
+  font-size: 2.81em;
   font-weight: 500;
   color: var(--extremely-dark-text);
   transform: rotate(-90deg);
@@ -70,7 +70,7 @@ h6 {
 
 main {
   padding-top: 100px;
-  margin-left: 9vw;
+  margin-left: 120px;
   width: 80vw;
 }
 
@@ -103,6 +103,8 @@ a:hover {
   opacity: 1;
 }
 
+/* PROJECTS CONTAINER AND STUFF */
+
 .gridItem {
   position: relative;
   display: inline-block;
@@ -131,7 +133,7 @@ a:hover {
 }
 .gridParagraph {
   color: var(--dark-text);
-  font-size: 1.23rem;
+  font-size: 1.2rem;
 }
 .gridLink {
   position: absolute;
