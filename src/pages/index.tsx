@@ -21,14 +21,14 @@ export default function Home() {
         <span className='headingStarter'>//</span>
         <h1>ABOUT</h1>
         <p>
-          Hi, I&apos;m Cody, a 16 y/o fullstack webdeveloper and designer. I
-          love creating things for the web and tools for people all over the
-          world to use. I&apos;ve contributed to many Open Source Software(d)
-          organizations, and do &quot;intern&quot; work for two, dahliaOS and
+          Hey, I&apos;m Cody, a 16 y/o full-stack web developer & designer. I
+          love building things for the web and tools for people from all over
+          the world to use. I&apos;ve contributed to many Open Source (d)
+          organizations, and have worked for two notable names, dahliaOS and
           BlissROMS.
         </p>
 
-        <div className="spaceInBetweenSections" />
+        <div className='spaceInBetweenSections' />
 
         {/* PROJECTS */}
         <span className='headingStarter'>//</span>

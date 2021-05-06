@@ -21,9 +21,25 @@
   -o-transition: all ease-in-out 0.15s;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--thirdary-background);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
 :root {
   --main-background: #181818;
   --secondary-background: #282828;
+  --thirdary-background: #333333;
   --spotify-green: #1db954;
   --extremely-dark-text: #353535;
   --dark-text: #757575;
@@ -148,6 +164,10 @@ p {
 
 /* SPOTIFY TILES */
 
+.tippy-tooltip {
+  background: var(--secondary-background);
+}
+
 .spotify {
   position: fixed;
   bottom: 20px;
@@ -167,8 +187,8 @@ p {
 
 .spotifyAlbumArt {
   margin-left: 7px;
-  height: 85%;
-  width: auto;
+  height: 89px;
+  width: 89px;
   border-radius: 7px;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;

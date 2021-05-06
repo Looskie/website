@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
 
+import "react-tippy/dist/tippy.css";
 import "../styles/main.css";
 
 export default function App({ Component, pageProps }: AppProps) {

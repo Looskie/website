@@ -1,4 +1,5 @@
 import { useLanyard } from "use-lanyard";
+import { Tooltip } from "react-tippy";
 import { Consts } from "../misc/consts";
 
 export const Spotify = () => {
@@ -8,11 +9,18 @@ export const Spotify = () => {
 
   return (
     <div className='spotify'>
-      <img
-        src={lanyard.spotify.album_art_url}
-        alt={lanyard.spotify.song}
-        className='spotifyAlbumArt'
-      />
+      <Tooltip
+        animateFill={false}
+        position='top-start'
+        duration={250}
+        title={lanyard.spotify.artist + " - " + lanyard.spotify.song}
+      >
+        <img
+          src={lanyard.spotify.album_art_url}
+          alt={lanyard.spotify.song}
+          className='spotifyAlbumArt'
+        />
+      </Tooltip>
       <div className='spotifyDetails'>
         <span className='listeningNow'>listening now...</span>
         <h1 className='spotifySong'>{lanyard.spotify.song}</h1>
