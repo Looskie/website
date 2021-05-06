@@ -235,3 +235,33 @@ p {
     bottom: 45px;
   }
 }
+@media (max-width: 650px) {
+  nav {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    align-items: unset;
+  }
+
+  .logo {
+    margin-left: 25px;
+  }
+
+  h6 {
+    display: none;
+  }
+
+  .spotify {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  main {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  p {
+    padding: 0 15px;
+  }
+}
