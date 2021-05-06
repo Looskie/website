@@ -37,7 +37,7 @@ export default function Home() {
         <span className="headingStarter">//</span>
         <h1>PROJECTS</h1>
         <div className="grid">
-          <div className="gridItem">
+          <div className="gridItem firstInLine">
             <h1 className="gridHeader">Lorem, ipsum.</h1>
             <p className="gridParagraph">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
@@ -58,7 +58,7 @@ export default function Home() {
             </a>
           </div>
           <br /> {/* We're breaking here so they don't go all inline */}
-          <div className="gridItem">
+          <div className="gridItem firstInLine">
             <h1 className="gridHeader">Lorem, ipsum.</h1>
             <p className="gridParagraph">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
