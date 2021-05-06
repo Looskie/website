@@ -42,7 +42,7 @@ body {
 /* NAV */
 
 nav {
-  padding-top: 20px;
+  padding-top: 25px;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ nav {
 }
 
 .logo {
-  width: 80px;
+  width: 75px;
 }
 
 h6 {
@@ -69,7 +69,7 @@ h6 {
 
 main {
   padding-top: 100px;
-  margin-left: 8vw;
+  margin-left: 9vw;
   width: 80vw;
 }
 
