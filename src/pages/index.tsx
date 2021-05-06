@@ -28,11 +28,7 @@ export default function Home() {
           BlissROMS.
         </p>
 
-        {/* Looskie fix */}
-        <br />
-        <br />
-        <br />
-        <br />
+        <div className="spaceInBetweenSections" />
 
         {/* PROJECTS */}
         <span className='headingStarter'>//</span>

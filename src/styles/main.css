@@ -74,6 +74,10 @@ main {
   width: 80vw;
 }
 
+.spaceInBetweenSections {
+  margin-top: 5.8em;
+}
+
 .headingStarter {
   margin-right: 10px;
   font-size: 2.37em;
