@@ -14,11 +14,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: all ease-in-out 0.15s;
-  -webkit-transition: all ease-in-out 0.15s;
-  -moz-transition: all ease-in-out 0.15s;
-  -ms-transition: all ease-in-out 0.15s;
-  -o-transition: all ease-in-out 0.15s;
+  transition: ease all 0.45s;
+  -webkit-transition: ease all 0.45s;
+  -moz-transition: ease all 0.45s;
+  -ms-transition: ease all 0.45s;
+  -o-transition: ease all 0.45s;
 }
 
 ::-webkit-scrollbar {
@@ -126,7 +126,7 @@ a:hover {
   display: inline-block;
   background: var(--secondary-background);
   width: 380px;
-  margin: 8px;
+  margin: 8px 20px 15px 0px;
   padding: 11px 11px 42px 11px;
   border-radius: 11px;
   -webkit-border-radius: 11px;
@@ -134,11 +134,6 @@ a:hover {
   -ms-border-radius: 11px;
   -o-border-radius: 11px;
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
-}
-
-/* Remove the left margin from the first item on the left */
-.firstInLine {
-  margin-left: 0;
 }
 
 .gridHeader {
@@ -235,6 +230,7 @@ p {
     bottom: 45px;
   }
 }
+
 @media (max-width: 650px) {
   nav {
     position: relative;
@@ -262,6 +258,17 @@ p {
   }
 
   p {
-    padding: 0 15px;
+    padding: 0 5px;
+  }
+
+  .gridItem {
+    text-align: left;
+    width: 98%;
+    max-width: 380px;
+    margin: 20px 0;
+  }
+
+  .gridParagraph {
+    padding: 0;
   }
 }
