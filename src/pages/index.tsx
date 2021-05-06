@@ -10,7 +10,7 @@ export default function Home() {
         <title>DEVLOOSKIE | home</title>
       </Head>
       <nav>
-        <img src="./logo.png" alt="DEVLOOSKIE'S LOGO" className="logo" />
+        <img src='./logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
         <h6>DEVLOOSKIE</h6>
       </nav>
       <main>
@@ -18,7 +18,7 @@ export default function Home() {
         <Spotify />
 
         {/* ABOUT */}
-        <span className="headingStarter">//</span>
+        <span className='headingStarter'>//</span>
         <h1>ABOUT</h1>
         <p>
           Hi, I'm Cody, a 16 y/o fullstack webdeveloper and designer. I love
@@ -34,47 +34,47 @@ export default function Home() {
         <br />
 
         {/* PROJECTS */}
-        <span className="headingStarter">//</span>
+        <span className='headingStarter'>//</span>
         <h1>PROJECTS</h1>
-        <div className="grid">
-          <div className="gridItem firstInLine">
-            <h1 className="gridHeader">Lorem, ipsum.</h1>
-            <p className="gridParagraph">
+        <div className='grid'>
+          <div className='gridItem firstInLine'>
+            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
               optio voluptate accusamus sapiente facilis, p
             </p>
-            <a href="#" className="gridLink">
+            <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
-          <div className="gridItem">
-            <h1 className="gridHeader">Lorem, ipsum.</h1>
-            <p className="gridParagraph">
+          <div className='gridItem'>
+            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
               optio voluptate accusamus sapiente facilis, p{" "}
             </p>
-            <a href="#" className="gridLink">
+            <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
           <br /> {/* We're breaking here so they don't go all inline */}
-          <div className="gridItem firstInLine">
-            <h1 className="gridHeader">Lorem, ipsum.</h1>
-            <p className="gridParagraph">
+          <div className='gridItem firstInLine'>
+            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
               optio voluptate accusamus sapiente facilis, p{" "}
             </p>
-            <a href="#" className="gridLink">
+            <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
-          <div className="gridItem">
-            <h1 className="gridHeader">Lorem, ipsum.</h1>
-            <p className="gridParagraph">
+          <div className='gridItem'>
+            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
               optio voluptate accusamus sapiente facilis, p{" "}
             </p>
-            <a href="#" className="gridLink">
+            <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
