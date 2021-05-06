@@ -110,10 +110,10 @@ export default function Home() {
             <img src='/img/designs/ARIES.jpg' alt='ARIES web design' />
           </div>
           <div className='designGridItem'>
-            <img src='/img/designs/DBRAND.jpg' alt='DBRAND web design' />
+            <img src='/img/designs/OFFWHITE.jpg' alt='OFFWHITE web design' />
           </div>
           <div className='designGridItem'>
-            <img src='/img/designs/OFFWHITE.jpg' alt='OFFWHITE web design' />
+            <img src='/img/designs/DBRAND.jpg' alt='DBRAND web design' />
           </div>
         </div>
       </main>

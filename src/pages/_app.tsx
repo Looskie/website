@@ -10,6 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <meta charSet='UTF-8' />
         <title>DEVLOOSKIE</title>
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500&display=swap'
+          rel='stylesheet'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta
           name='description'
@@ -21,11 +26,6 @@ export default function App({ Component, pageProps }: AppProps) {
         />
 
         <link rel='icon' href='assets/img/favicon.ico' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500&display=swap'
-          rel='stylesheet'
-        />
       </Head>
       <Component {...pageProps} />
     </div>
