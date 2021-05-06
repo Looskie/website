@@ -126,6 +126,8 @@ a:hover {
   display: inline-block;
   background: var(--secondary-background);
   width: 380px;
+  min-height: 187px;
+  vertical-align: top;
   margin: 8px 20px 15px 0px;
   padding: 11px 11px 42px 11px;
   border-radius: 11px;

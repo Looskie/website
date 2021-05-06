@@ -34,48 +34,70 @@ export default function Home() {
         <span className='headingStarter'>//</span>
         <h1>PROJECTS</h1>
         <div className='grid'>
-          <div className='gridItem firstInLine'>
-            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+          <div className='gridItem'>
+            <h1 className='gridHeader'>IMPERIAL</h1>
             <p className='gridParagraph'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, p
+              IMPERIAL is a code/text storing site where you can share, edit, or
+              encrypt documents.
             </p>
-            <a href='#' className='gridLink'>
+            <a
+              href='https://imperialb.in/'
+              className='gridLink'
+              target='_blank'
+              rel='noreferrer'
+            >
               WEBSITE
             </a>
           </div>
           <div className='gridItem'>
-            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <h1 className='gridHeader'>creatable</h1>
             <p className='gridParagraph'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, p{" "}
+              Small portfolio website made for Creatable. A mutual Python
+              developer.
             </p>
-            <a href='#' className='gridLink'>
+            <a
+              href='https://creatable.cafe'
+              className='gridLink'
+              target='_blank'
+              rel='noreferrer'
+            >
               WEBSITE
             </a>
           </div>
           <br /> {/* We're breaking here so they don't go all inline */}
-          <div className='gridItem firstInLine'>
-            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+          <div className='gridItem'>
+            <h1 className='gridHeader'>dahliaOS</h1>
             <p className='gridParagraph'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, p{" "}
+              dahliaOS is a modern, secure, lightweight and responsive operating
+              system, combining the best of GNU/Linux and Fuchsia OS.
             </p>
-            <a href='#' className='gridLink'>
+            <a
+              href='https://dahliaOS.io'
+              className='gridLink'
+              target='_blank'
+              rel='noreferrer'
+            >
               WEBSITE
             </a>
           </div>
           <div className='gridItem'>
-            <h1 className='gridHeader'>Lorem, ipsum.</h1>
+            <h1 className='gridHeader'>blissroms</h1>
             <p className='gridParagraph'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, p{" "}
+              BlissROMS is an Open Sourced OS based on Android bringing many
+              customizations, options, and added security features.
             </p>
-            <a href='#' className='gridLink'>
+            <a
+              href='https://blissroms.com'
+              className='gridLink'
+              target='_blank'
+              rel='noreferrer'
+            >
               WEBSITE
             </a>
           </div>
         </div>
+
+        {/* DESIGNS */}
       </main>
     </div>
   );
