@@ -193,7 +193,14 @@ p {
 }
 
 .spotifyDetails {
+  min-width: 55%;
   margin-left: 15px;
+}
+
+.listeningNow,
+.spotifySong,
+.spotifyArtist {
+  padding-right: 13px;
 }
 
 .listeningNow {
@@ -205,14 +212,15 @@ p {
 }
 
 .spotifySong,
-.spotifyArtist {
-  width: 208px;
+.spotifyArtist,
+.listeningNow {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .spotifySong {
+  display: block;
   margin: 0;
   font-size: 18px;
   font-weight: normal;
@@ -248,6 +256,8 @@ p {
   }
 
   .spotify {
+    width: 98%;
+    max-width: 330px;
     margin: 0 auto;
     text-align: left;
   }
