@@ -226,3 +226,11 @@ p {
   display: block;
   color: var(--dark-text);
 }
+
+@media (max-width: 1278px) {
+  .spotify {
+    position: relative;
+    right: 0;
+    bottom: 45px;
+  }
+}

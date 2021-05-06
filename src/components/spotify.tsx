@@ -19,6 +19,7 @@ export const Spotify = () => {
           src={lanyard.spotify.album_art_url}
           alt={lanyard.spotify.song}
           className='spotifyAlbumArt'
+          draggable='false'
         />
       </Tooltip>
       <div className='spotifyDetails'>
