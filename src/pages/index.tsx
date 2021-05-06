@@ -10,7 +10,7 @@ export default function Home() {
         <title>DEVLOOSKIE | home</title>
       </Head>
       <nav>
-        <img src='./logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
+        <img src='./img/logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
         <h6>DEVLOOSKIE</h6>
       </nav>
       <main>
@@ -23,7 +23,7 @@ export default function Home() {
         <p>
           Hey, I&apos;m Cody, a 16 y/o full-stack web developer & designer. I
           love building things for the web and tools for people from all over
-          the world to use. I&apos;ve contributed to many Open Source (d)
+          the world to use. I&apos;ve contributed to many Open Source(d)
           organizations, and have worked for two notable names, dahliaOS and
           BlissROMS.
         </p>
@@ -97,7 +97,25 @@ export default function Home() {
           </div>
         </div>
 
+        <div className='spaceInBetweenSections' />
+
         {/* DESIGNS */}
+        <span className='headingStarter'>//</span>
+        <h1>DESIGNS</h1>
+        <div className='designGrid'>
+          <div className='designGridItem'>
+            <img src='/img/designs/QUADECA.jpg' alt='QUADECA web design' />
+          </div>
+          <div className='designGridItem'>
+            <img src='/img/designs/ARIES.jpg' alt='ARIES web design' />
+          </div>
+          <div className='designGridItem'>
+            <img src='/img/designs/DBRAND.jpg' alt='DBRAND web design' />
+          </div>
+          <div className='designGridItem'>
+            <img src='/img/designs/OFFWHITE.jpg' alt='OFFWHITE web design' />
+          </div>
+        </div>
       </main>
     </div>
   );
