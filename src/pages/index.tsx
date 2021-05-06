@@ -23,50 +23,48 @@ export default function Home() {
         <p>16 y/o fullstack webdeveloper and designer</p>
         <br />
         <br />
+        <br />
+        <br />
 
         {/* PROJECTS */}
         <span className='headingStarter'>//</span>
         <h1>PROJECTS</h1>
         <div className='grid'>
-          <div className='grid-item'>
+          <div className='gridItem'>
             <h1 className='gridHeader'>Lorem, ipsum.</h1>
             <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, provident magnam vel,
-              natus autem est vero! Obcaecati aliquam earum repellat?
+              optio voluptate accusamus sapiente facilis, p
             </p>
             <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
-          <div className='grid-item'>
+          <div className='gridItem'>
             <h1 className='gridHeader'>Lorem, ipsum.</h1>
             <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, provident magnam vel,
-              natus autem est vero! Obcaecati aliquam earum repellat?
+              optio voluptate accusamus sapiente facilis, p{" "}
             </p>
             <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
-          <div className='grid-item'>
+          <div className='gridItem'>
             <h1 className='gridHeader'>Lorem, ipsum.</h1>
             <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, provident magnam vel,
-              natus autem est vero! Obcaecati aliquam earum repellat?
+              optio voluptate accusamus sapiente facilis, p{" "}
             </p>
             <a href='#' className='gridLink'>
               WEBSITE
             </a>
           </div>
-          <div className='grid-item'>
+          <div className='gridItem'>
             <h1 className='gridHeader'>Lorem, ipsum.</h1>
             <p className='gridParagraph'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia
-              optio voluptate accusamus sapiente facilis, provident magnam vel,
-              natus autem est vero! Obcaecati aliquam earum repellat?
+              optio voluptate accusamus sapiente facilis, p{" "}
             </p>
             <a href='#' className='gridLink'>
               WEBSITE

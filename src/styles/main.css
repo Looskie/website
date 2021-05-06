@@ -6,12 +6,19 @@
 
 */
 
+/* BASIC SETUP STUFF I PRACTICALLY DO IN EVERY SINGLE PROJECT */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all ease-in-out 0.15s;
+  -webkit-transition: all ease-in-out 0.15s;
+  -moz-transition: all ease-in-out 0.15s;
+  -ms-transition: all ease-in-out 0.15s;
+  -o-transition: all ease-in-out 0.15s;
 }
 
 :root {
@@ -31,6 +38,8 @@ body {
   font-family: "Lexend", sans-serif;
   font-weight: normal;
 }
+
+/* NAV */
 
 nav {
   padding-top: 20px;
@@ -56,23 +65,73 @@ h6 {
   transform: rotate(-90deg);
 }
 
+/* MAIN STUFF */
+
 main {
   padding-top: 100px;
   margin-left: 8vw;
-  width: 90vw;
+  width: 80vw;
 }
 
 .headingStarter {
-  font-size: 38px;
+  margin-right: 10px;
+  font-size: 2.37em;
   display: inline-block;
   font-weight: bold;
 }
 
 h1 {
-  margin-left: 12px;
+  margin-bottom: 20px;
   display: inline-block;
-  font-size: 38px;
+  font-size: 2.37em;
   font-weight: normal;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.6;
+}
+a:hover {
+  opacity: 1;
+}
+
+.grid {
+}
+.gridItem {
+  position: relative;
+  background: var(--secondary-background);
+  width: 380px;
+  margin: 6px;
+  padding: 11px 11px 42px 11px;
+  border-radius: 11px;
+  -webkit-border-radius: 11px;
+  -moz-border-radius: 11px;
+  -ms-border-radius: 11px;
+  -o-border-radius: 11px;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+}
+
+.gridHeader {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+.gridParagraph {
+  color: var(--dark-text);
+  font-size: 1.23rem;
+}
+.gridLink {
+  position: absolute;
+  bottom: 11px;
+  right: 11px;
+}
+
+p {
+  font-size: 1.4em;
 }
 
 /* SPOTIFY TILES */
