@@ -132,6 +132,7 @@ a:hover {
 
 p {
   font-size: 1.4em;
+  max-width: 750px;
 }
 
 /* SPOTIFY TILES */
