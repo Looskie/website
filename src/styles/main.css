@@ -334,4 +334,30 @@ p {
   .gridParagraph {
     padding: 0;
   }
+
+  .designGridAnchor:hover > .designGridImage {
+    margin: 0;
+  }
+
+  .designGrid {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .designGridItem {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 80px auto;
+  }
+
+  .designGridImage {
+    position: relative;
+    margin: 0;
+    width: 100%;
+  }
+  .designGridAnchor {
+    opacity: 0.9;
+  }
 }
