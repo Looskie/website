@@ -171,12 +171,16 @@ p {
 
 /* DESIGN GRID */
 
+.designGridItem:nth-of-type(odd) {
+  margin-left: 0;
+}
+
 .designGridItem {
-  display: block;
+  display: inline-block;
   position: relative;
   width: 400px;
   height: 225px;
-  margin: 60px 0;
+  margin: 8px 20px 15px 20px;
   background: var(--secondary-background);
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
@@ -308,11 +312,27 @@ h2 {
   color: var(--dark-text);
 }
 
+@media (max-height: 425px) {
+  h6 {
+    display: none;
+  }
+}
+
 @media (max-width: 1278px) {
   .spotify {
     position: relative;
     right: 0;
     bottom: 45px;
+  }
+}
+
+@media (max-width: 1075px) {
+  .designGridItem {
+    display: block;
+    margin: 30px 0;
+  }
+  .designGridItem:nth-of-type(3n) {
+    margin-top: -20px;
   }
 }
 

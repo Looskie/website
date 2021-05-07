@@ -133,6 +133,7 @@ export default function Home(): JSX.Element {
               />
             </a>
           </div>
+          <br />
           <div className='designGridItem'>
             <a
               className='noOpacity designGridAnchor'
