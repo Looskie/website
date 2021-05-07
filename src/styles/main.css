@@ -210,6 +210,26 @@ p {
   -o-border-radius: 8px;
 }
 
+/* CONTACT */
+.socialMedia {
+  display: block;
+  margin: 10px 0;
+}
+
+.socialStart {
+  font-size: 1.5em;
+  margin-right: 12px;
+  font-weight: 600;
+  color: var(--extremely-dark-text);
+  opacity: 0.8;
+}
+
+h2 {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1.8em;
+}
+
 /* SPOTIFY TILES */
 
 .tippy-tooltip {

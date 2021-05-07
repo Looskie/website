@@ -169,11 +169,49 @@ export default function Home(): JSX.Element {
         <span className='headingStarter'>//</span>
         <h1>CONTACT</h1>
         <ul className='socialMedias'>
-          <li className='socialMedia'>{Consts.discordID}</li>
-          <li className='socialMedia'>{Consts.github}</li>
-          <li className='socialMedia'>{Consts.instagram}</li>
-          <li className='socialMedia'>{Consts.twitter}</li>
+          <li className='socialMedia'>
+            <span className='socialStart'>\\</span>
+            <a
+              href={"https://instagram.com/" + Consts.instagram}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <h2>INSTAGRAM</h2>
+            </a>
+          </li>
+          <li className='socialMedia'>
+            <span className='socialStart'>\\</span>
+            <a
+              href={"https://twitter.com/" + Consts.twitter}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <h2>TWITTER</h2>
+            </a>
+          </li>
+          <li className='socialMedia'>
+            <span className='socialStart'>\\</span>
+            <a
+              href={"https://github.com/" + Consts.github}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <h2>GITHUB</h2>
+            </a>
+          </li>
+          <li className='socialMedia'>
+            <span className='socialStart'>\\</span>
+            <a
+              href={"https://discord.com/users/" + Consts.discordID}
+              target='_blank'
+              rel='noreferrer'
+            >
+              <h2>DISCORD</h2>
+            </a>
+          </li>
         </ul>
+
+        <div className='spaceInBetweenSections' />
       </main>
     </div>
   );
