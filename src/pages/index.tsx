@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Spotify } from "../components/spotify";
 import { Consts } from "../misc/consts";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div>
       <Head>
@@ -162,6 +162,18 @@ export default function Home() {
             </a>
           </div>
         </div>
+
+        <div className='spaceInBetweenSections' />
+
+        {/* CONTACT */}
+        <span className='headingStarter'>//</span>
+        <h1>CONTACT</h1>
+        <ul className='socialMedias'>
+          <li className='socialMedia'>{Consts.discordID}</li>
+          <li className='socialMedia'>{Consts.github}</li>
+          <li className='socialMedia'>{Consts.instagram}</li>
+          <li className='socialMedia'>{Consts.twitter}</li>
+        </ul>
       </main>
     </div>
   );
