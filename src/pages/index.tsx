@@ -104,16 +104,40 @@ export default function Home() {
         <h1>DESIGNS</h1>
         <div className='designGrid'>
           <div className='designGridItem'>
-            <img src='/img/designs/QUADECA.jpg' alt='QUADECA web design' />
+            <a className='noOpacity designGridAnchor' href='#'>
+              <img
+                src='/img/designs/QUADECA.jpg'
+                className='designGridImage'
+                alt='QUADECA web design'
+              />
+            </a>
           </div>
           <div className='designGridItem'>
-            <img src='/img/designs/ARIES.jpg' alt='ARIES web design' />
+            <a className='noOpacity designGridAnchor' href='#'>
+              <img
+                src='/img/designs/OFFWHITE.jpg'
+                className='designGridImage'
+                alt='ARIES web design'
+              />
+            </a>
           </div>
           <div className='designGridItem'>
-            <img src='/img/designs/OFFWHITE.jpg' alt='OFFWHITE web design' />
+            <a className='noOpacity designGridAnchor' href='#'>
+              <img
+                src='/img/designs/ARIES.jpg'
+                className='designGridImage'
+                alt='OFFWHITE web design'
+              />
+            </a>
           </div>
           <div className='designGridItem'>
-            <img src='/img/designs/DBRAND.jpg' alt='DBRAND web design' />
+            <a className='noOpacity designGridAnchor' href='#'>
+              <img
+                src='/img/designs/DBRAND.jpg'
+                className='designGridImage'
+                alt='DBRAND web design'
+              />
+            </a>
           </div>
         </div>
       </main>
