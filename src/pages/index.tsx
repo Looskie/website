@@ -106,7 +106,12 @@ export default function Home() {
         <h1>DESIGNS</h1>
         <div className='designGrid'>
           <div className='designGridItem'>
-            <a className='noOpacity designGridAnchor' href='#'>
+            <a
+              className='noOpacity designGridAnchor'
+              href='https://www.instagram.com/p/CNEKawnAIKj/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src='/img/designs/QUADECA.jpg'
                 className='designGridImage'
@@ -115,25 +120,40 @@ export default function Home() {
             </a>
           </div>
           <div className='designGridItem'>
-            <a className='noOpacity designGridAnchor' href='#'>
+            <a
+              className='noOpacity designGridAnchor'
+              href='https://www.instagram.com/p/CGdZlqiAao9/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src='/img/designs/OFFWHITE.jpg'
-                className='designGridImage'
-                alt='ARIES web design'
-              />
-            </a>
-          </div>
-          <div className='designGridItem'>
-            <a className='noOpacity designGridAnchor' href='#'>
-              <img
-                src='/img/designs/ARIES.jpg'
                 className='designGridImage'
                 alt='OFFWHITE web design'
               />
             </a>
           </div>
           <div className='designGridItem'>
-            <a className='noOpacity designGridAnchor' href='#'>
+            <a
+              className='noOpacity designGridAnchor'
+              href='https://www.instagram.com/p/CJHkHnGgxG6/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <img
+                src='/img/designs/ARIES.jpg'
+                className='designGridImage'
+                alt='ARIES web design'
+              />
+            </a>
+          </div>
+          <div className='designGridItem'>
+            <a
+              className='noOpacity designGridAnchor'
+              href='https://www.instagram.com/p/CDb3eGajPP_/'
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src='/img/designs/DBRAND.jpg'
                 className='designGridImage'
