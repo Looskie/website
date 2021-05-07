@@ -10,7 +10,9 @@ export default function Home() {
         <title>DEVLOOSKIE | home</title>
       </Head>
       <nav>
-        <img src='./img/logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
+        <a href='#' className='noOpacity'>
+          <img src='./img/logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
+        </a>
         <h6>DEVLOOSKIE</h6>
       </nav>
       <main>
