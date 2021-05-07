@@ -14,16 +14,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: ease width 0.45s, ease height 0.45s, ease opacity 0.45s,
-    ease margin 0.15s;
-  -webkit-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.45s,
-    ease margin 0.45s;
-  -moz-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.45s,
-    ease margin 0.45s;
-  -ms-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.45s,
-    ease margin 0.45s;
-  -o-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.45s,
-    ease margin 0.45s;
+  transition: ease width 0.45s, ease height 0.45s, ease opacity 0.15s,
+    ease margin 0.25s;
+  -webkit-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.15s,
+    ease margin 0.25s;
+  -moz-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.15s,
+    ease margin 0.25s;
+  -ms-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.15s,
+    ease margin 0.25s;
+  -o-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.15s,
+    ease margin 0.25s;
 }
 
 ::-webkit-scrollbar {
@@ -206,6 +206,7 @@ p {
   width: 400px;
   height: auto;
   margin: 10px 0 0 10px;
+  will-change: margin;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   -webkit-border-radius: 8px;
