@@ -339,12 +339,6 @@ p {
     margin: 0;
   }
 
-  .designGrid {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-  }
-
   .designGridItem {
     width: 100%;
     height: auto;
