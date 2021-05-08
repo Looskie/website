@@ -65,6 +65,11 @@ body {
   font-weight: normal;
 }
 
+.centerThisPlease {
+  max-width: 1920px;
+  margin: auto;
+}
+
 /* NAV */
 
 nav {

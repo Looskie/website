@@ -5,7 +5,7 @@ import { Consts } from "../misc/consts";
 
 export default function Home(): JSX.Element {
   return (
-    <div>
+    <div className="centerThisPlease">
       <Head>
         <title>DEVLOOSKIE - Home</title>
         <meta
