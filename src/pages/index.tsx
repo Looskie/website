@@ -117,7 +117,7 @@ export default function Home(): JSX.Element {
               rel='noreferrer'
             >
               <img
-                src='/img/designs/QUADECA.jpg'
+                src='/img/designs/QUADECA.webp'
                 className='designGridImage'
                 alt='QUADECA web design'
               />
@@ -131,7 +131,7 @@ export default function Home(): JSX.Element {
               rel='noreferrer'
             >
               <img
-                src='/img/designs/OFFWHITE.jpg'
+                src='/img/designs/OFFWHITE.webp'
                 className='designGridImage'
                 alt='OFFWHITE web design'
               />
@@ -146,7 +146,7 @@ export default function Home(): JSX.Element {
               rel='noreferrer'
             >
               <img
-                src='/img/designs/ARIES.jpg'
+                src='/img/designs/ARIES.webp'
                 className='designGridImage'
                 alt='ARIES web design'
               />
@@ -160,7 +160,7 @@ export default function Home(): JSX.Element {
               rel='noreferrer'
             >
               <img
-                src='/img/designs/DBRAND.jpg'
+                src='/img/designs/DBRAND.webp'
                 className='designGridImage'
                 alt='DBRAND web design'
               />
