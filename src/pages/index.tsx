@@ -8,10 +8,6 @@ export default function Home(): JSX.Element {
     <div className='centerThisPlease'>
       <Head>
         <title>DEVLOOSKIE - Home</title>
-        <meta
-          name='description'
-          content='Hey, I am Cody, a 16 y/o full-stack web developer & designer. Currently working on imperialbin.'
-        />
       </Head>
       <nav>
         <a href='#' className='noOpacity'>
