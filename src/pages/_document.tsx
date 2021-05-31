@@ -53,7 +53,7 @@ const Page = () => {
 };
 
 export default class extends Document {
-  render() {
+  render(): JSX.Element {
     return <Page />;
   }
 }

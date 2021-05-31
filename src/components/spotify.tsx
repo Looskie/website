@@ -2,7 +2,7 @@ import { useLanyard } from "use-lanyard";
 import { Tooltip } from "react-tippy";
 import { Consts } from "../misc/consts";
 
-export const Spotify = () => {
+export const Spotify = (): JSX.Element | null => {
   const { data: lanyard } = useLanyard(Consts.discordID);
 
   if (!lanyard || !lanyard.spotify) return null;
