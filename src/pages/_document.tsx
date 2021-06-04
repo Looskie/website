@@ -5,7 +5,6 @@ const Page = () => {
     <Html lang='en'>
       <Head>
         <meta charSet='UTF-8' />
-        <title>DEVLOOSKIE</title>
 
         <link
           rel='apple-touch-icon'
@@ -34,7 +33,6 @@ const Page = () => {
           href='https://fonts.googleapis.com/css2?family=Lexend:wght@100;300;400;500&display=swap'
           rel='stylesheet'
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta
           name='description'
           content='Hey, I am Cody, a 16 y/o full-stack web developer & designer. Currently working on imperialbin.'
