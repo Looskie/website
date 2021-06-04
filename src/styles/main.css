@@ -108,6 +108,16 @@ main {
   margin-top: 5.8em;
 }
 
+.headingStarter,
+h1 {
+  color: var(--dark-text);
+}
+
+/* Reset color for project containers */
+.gridItem h1 {
+  color: unset;
+}
+
 .headingStarter {
   margin-right: 10px;
   font-size: 2.37em;
