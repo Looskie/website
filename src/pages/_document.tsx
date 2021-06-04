@@ -35,7 +35,7 @@ const Page = () => {
         />
         <meta
           name='description'
-          content='Hey, I am Cody, a 16 y/o full-stack web developer & designer. Currently working on imperialbin.'
+          content='Hey, Im Cody, a 16 y/o full-stack web developer & designer. Currently working on imperialbin.'
         />
         <meta
           name='keywords'
