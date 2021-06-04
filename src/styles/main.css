@@ -14,15 +14,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) transform 0.15s,
     ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
-  -webkit-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+  -webkit-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) transform 0.15s,
     ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
-  -moz-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+  -moz-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) transform 0.15s,
     ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
-  -ms-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+  -ms-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) transform 0.15s,
     ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
-  -o-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+  -o-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) transform 0.15s,
     ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
 }
 
@@ -124,10 +124,15 @@ h1:before {
   right: -0.15em;
   bottom: 4px;
   background: var(--thirdary-background);
+  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s;
+  -webkit-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s;
+  -moz-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s;
+  -ms-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s;
+  -o-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s;
 }
 
 h1:hover:before {
-  top: 40%;
+  top: 45%;
 }
 
 /* Reset color for project containers */
@@ -177,6 +182,14 @@ a:hover {
   -ms-border-radius: 11px;
   -o-border-radius: 11px;
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+}
+
+.gridItem:hover {
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
 }
 
 .gridHeader {
@@ -338,6 +351,7 @@ h2 {
   margin: 0;
   font-size: 18px;
   font-weight: normal;
+  color: var(--light-text);
 }
 
 .spotifySong:before {
