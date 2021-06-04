@@ -14,16 +14,16 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: ease width 0.45s, ease height 0.45s, ease opacity 0.2s,
-    ease margin 0.25s;
-  -webkit-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.2s,
-    ease margin 0.25s;
-  -moz-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.2s,
-    ease margin 0.25s;
-  -ms-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.2s,
-    ease margin 0.25s;
-  -o-transition: ease width 0.45s, ease height 0.45s, ease opacity 0.2s,
-    ease margin 0.25s;
+  transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+    ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
+  -webkit-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+    ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
+  -moz-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+    ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
+  -ms-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+    ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
+  -o-transition: cubic-bezier(0.455, 0.03, 0.515, 0.955) top 0.15s,
+    ease width 0.45s, ease height 0.45s, ease opacity 0.2s, ease margin 0.25s;
 }
 
 ::-webkit-scrollbar {
@@ -110,7 +110,24 @@ main {
 
 .headingStarter,
 h1 {
+  position: relative;
   color: var(--dark-text);
+}
+
+h1:before {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  z-index: -1;
+  top: 70%;
+  left: 0.35em;
+  right: -0.15em;
+  bottom: 4px;
+  background: var(--thirdary-background);
+}
+
+h1:hover:before {
+  top: 40%;
 }
 
 /* Reset color for project containers */
@@ -321,6 +338,10 @@ h2 {
   margin: 0;
   font-size: 18px;
   font-weight: normal;
+}
+
+.spotifySong:before {
+  background: unset;
 }
 
 .spotifyArtist {
