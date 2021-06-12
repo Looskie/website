@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
           love building things for the web and tools for people from all over
           the world to use. I&apos;ve contributed to many Open Source(d)
           organizations, and have worked for two notable names, dahliaOS and
-          BlissROMS.
+          BlissOS.
         </p>
 
         <div className='spaceInBetweenSections' />
@@ -83,9 +83,9 @@ export default function Home(): JSX.Element {
             </a>
           </div>
           <div className='gridItem'>
-            <h1 className='gridHeader'>blissroms</h1>
+            <h1 className='gridHeader'>blissos</h1>
             <p className='gridParagraph'>
-              BlissROMS is an Open Sourced OS based on Android bringing many
+              BlissOS is an Open Sourced OS based on Android bringing many
               customizations, options, and added security features.
             </p>
             <a
