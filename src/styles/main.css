@@ -278,6 +278,7 @@ h2 {
   display: inline-block;
   font-weight: 400;
   font-size: 1.8em;
+  will-change: transform;
 }
 
 /* SPOTIFY TILES */
@@ -310,6 +311,7 @@ h2 {
 }
 
 .spotifyAlbumArt {
+  display: block;
   margin-left: 7px;
   height: 89px;
   width: 89px;
