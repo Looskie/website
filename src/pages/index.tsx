@@ -52,13 +52,12 @@ export default function Home(): JSX.Element {
             </a>
           </div>
           <div className='gridItem'>
-            <h1 className='gridHeader'>creatable</h1>
+            <h1 className='gridHeader'>Hiven</h1>
             <p className='gridParagraph'>
-              Small portfolio website made for Creatable. A mutual Python
-              developer.
+              Privacy-focussed chat for communities and people that live in the future. Premium groups, encrypted chat, voice chat & more.
             </p>
             <a
-              href='https://creatable.cafe'
+              href='https://hiven.io'
               className='gridLink'
               target='_blank'
               rel='noreferrer'
