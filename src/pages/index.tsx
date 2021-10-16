@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
           love building things for the web and tools for people from all over
           the world to use. I&apos;ve contributed to many Open Source(d)
           organizations, and have worked for two notable names, dahliaOS and
-          BlissOS.
+          BlissOS. I am currently working at Giggl.
         </p>
 
         <div className='spaceInBetweenSections' />
@@ -82,13 +82,12 @@ export default function Home(): JSX.Element {
             </a>
           </div>
           <div className='gridItem'>
-            <h1 className='gridHeader'>blissos</h1>
+            <h1 className='gridHeader'>Giggl</h1>
             <p className='gridParagraph'>
-              BlissOS is an Open Sourced OS based on Android bringing many
-              customizations, options, and added security features.
+              From hosting virtual movie nights, browsing the web with friends or watching anime with your long-distance partner: Giggl lets you do that together in real-time.
             </p>
             <a
-              href='https://blissroms.com'
+              href='https://giggl.app'
               className='gridLink'
               target='_blank'
               rel='noreferrer'
