@@ -23,7 +23,7 @@ export default function Home(): JSX.Element {
         <span className='headingStarter'>//</span>
         <h1>ABOUT</h1>
         <p>
-          Hey, I&apos;m Cody, a 16 y/o full-stack web developer & designer. I
+          Hey, I&apos;m Cody, a 17 y/o full-stack web developer & designer. I
           love building things for the web and tools for people from all over
           the world to use. I&apos;ve contributed to many Open Source(d)
           organizations, and have worked for two notable names, dahliaOS and
