@@ -5,6 +5,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     type: "light" | "dark";
     background: Hex;
+    secondaryBackground: Hex;
     textPrimary: Hex;
     accent: Hex;
   }
