@@ -16,7 +16,7 @@ const Project = styled(Parallax)`
   display: flex;
   height: 250px;
   background: ${({ theme }) => theme.secondaryBackground};
-  bottom: 5%;
+  bottom: -5%;
   right: 10%;
   border-radius: 8px;
 

@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   background: ${({ theme }) => theme.background};
 `;
 
-const ContentContainer = styled.div`
+const LandingContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -23,18 +23,18 @@ const ContentContainer = styled.div`
 `;
 
 const Name = styled.h1`
-  font-size: 5vw;
+  font-size: 6vw;
   font-weight: bold;
-  transform: scale(1, 1.5);
+  transform: scale(1, 1.8);
   z-index: 2;
   color: ${({ theme }) => theme.textPrimary};
   mix-blend-mode: difference;
 `;
 
 const Occupation = styled.h2`
-  font-size: 3vw;
+  font-size: 4vw;
   font-weight: bold;
-  transform: scale(1, 1);
+  transform: scale(1, 1.1);
   z-index: 2;
   color: ${({ theme }) => theme.textPrimary};
   mix-blend-mode: difference;
@@ -44,12 +44,12 @@ const Home: NextPage = () => {
   return (
     <Wrapper>
       <Nav />
-      <ContentContainer>
+      <LandingContainer>
         <FloatingProjects />
         <Name>CODY MILLER,</Name>
         <Occupation>DEVELOPER AND DESIGNER.</Occupation>
-      </ContentContainer>
-      <h1>yo</h1>
+      </LandingContainer>
+
       <h1>yo</h1>
       <h1>yo</h1>
       <h1>yo</h1>
