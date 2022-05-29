@@ -17,8 +17,8 @@ const LandingContainer = styled.div`
   position: relative;
   align-items: flex-end;
   justify-content: center;
-  margin: 0 4vw;
-  width: 94vw;
+  margin: 0 7vw;
+  width: 90vw;
   min-height: 100vh;
 `;
 
@@ -43,7 +43,7 @@ const Occupation = styled.h2`
 const Introduction = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 4vw;
+  margin: 0 7vw;
   width: 94vw;
   min-height: 100vh;
 
@@ -72,26 +72,6 @@ const Home: NextPage = () => {
         <Name>CODY MILLER,</Name>
         <Occupation>DEVELOPER AND DESIGNER.</Occupation>
       </LandingContainer>
-      <Introduction>
-        <h1>INTRODUCTION</h1>
-        <p>I&apos;m Cody, a software engineer and designer based in the U.S</p>
-      </Introduction>
-
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
-      <h1>yo</h1>
     </Wrapper>
   );
 };
