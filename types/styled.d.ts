@@ -7,6 +7,7 @@ declare module "styled-components" {
     background: Hex;
     secondaryBackground: Hex;
     textPrimary: Hex;
+    textSecondary: Hex;
     accent: Hex;
   }
 }

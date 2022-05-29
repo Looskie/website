@@ -7,6 +7,7 @@ export const Theme: DefaultTheme = {
 
   accent: "#ff6331",
   textPrimary: "#fff",
+  textSecondary: "#8e8e8e",
 };
 
 export const LightTheme: DefaultTheme = {
@@ -14,5 +15,6 @@ export const LightTheme: DefaultTheme = {
   background: "#F9F5EA",
   secondaryBackground: "#C2BEB1",
   accent: "#ff6331",
-  textPrimary: "#fff",
+  textPrimary: "#000",
+  textSecondary: "#8e8e8e",
 };
