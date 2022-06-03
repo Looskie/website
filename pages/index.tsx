@@ -17,16 +17,18 @@ const LandingContainer = styled.div`
   position: relative;
   align-items: flex-end;
   justify-content: center;
-  margin-left: 7em;
+  margin: 0 7em;
   min-width: 90vw;
   min-height: 100vh;
 `;
 
-const About = styled.div`
+const Section = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
+  padding: 0 7em;
 
   p {
     color: ${({ theme }) => theme.textSecondary};
@@ -111,7 +113,7 @@ const Home: NextPage = () => {
           </Occupation>
           <FloatingProjects />
         </LandingContainer>
-        <About>
+        <Section>
           <Title>ABOUT</Title>
           <p>
             Hey, I&apos;m Cody, a 17 y/o full-stack web developer & designer. I
@@ -120,7 +122,15 @@ const Home: NextPage = () => {
             organizations, and have worked for two notable names, dahliaOS and
             BlissOS. I am currently working at Giggl.
           </p>
-        </About>
+        </Section>
+        <Section>
+          <Title>WORKS</Title>
+          <p>not yet implemented</p>
+        </Section>
+        <Section>
+          <Title>CONTACT</Title>
+          <p>not yet implemented</p>
+        </Section>
       </HorizontalScroll>
     </Wrapper>
   );
