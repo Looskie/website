@@ -1,10 +1,16 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import styled, { ThemeProvider } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import { LightTheme } from "../utils/Theme";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { useEffect, useRef } from "react";
 import { loadCursor } from "../utils/Cursor";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: ${({ theme }) => theme.background};
+  }
+`;
 
 const Cursor = styled.div`
   position: fixed;
@@ -28,6 +34,7 @@ function Website({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <ThemeProvider theme={LightTheme}>
+      <GlobalStyle />
       <ParallaxProvider>
         <Cursor ref={cursorCanvas} />
         <Component {...pageProps} />

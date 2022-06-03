@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 const NavWrapper = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
   width: 7vw;
   position: absolute;
   left: 0;
   writing-mode: vertical-rl;
+  z-index: 1;
 
   li {
     list-style: none;
@@ -19,7 +20,12 @@ const NavWrapper = styled.ul`
 
     a {
       text-decoration: none;
-      color: ${({ theme }) => theme.secondaryBackground};
+      color: ${({ theme }) => theme.textSecondary};
+      transition: color 0.15s ease-in-out;
+
+      &:hover {
+        color: ${({ theme }) => theme.textPrimary};
+      }
     }
   }
 `;

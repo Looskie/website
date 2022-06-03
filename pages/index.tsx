@@ -13,7 +13,6 @@ const Wrapper = styled.div`
 
 const LandingContainer = styled.div`
   display: flex;
-  flex-direction: column;
   position: relative;
   align-items: flex-end;
   justify-content: center;
@@ -22,45 +21,44 @@ const LandingContainer = styled.div`
   min-height: 100vh;
 `;
 
-const Name = styled.h1`
-  font-size: 6vw;
-  font-weight: bold;
-  transform: scale(1, 1.8);
-  z-index: 2;
-  color: ${({ theme }) => theme.background};
-  mix-blend-mode: difference;
-`;
-
 const Occupation = styled.h2`
-  font-size: 4vw;
+  width: 100%;
+  font-size: 3vw;
   font-weight: bold;
-  transform: scale(1, 1.1);
+  text-align: right;
+  margin: 0;
   z-index: 2;
-  color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.textSecondary};
   mix-blend-mode: difference;
+  transform: scale(1, 0.8);
+  transform-origin: right;
 `;
 
-const Introduction = styled.div`
+const Name = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 7vw;
-  width: 94vw;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+`;
 
-  h1 {
-    font-size: 6vw;
-    font-weight: bold;
-    transform: scale(1, 1.4);
-    color: ${({ theme }) => theme.textPrimary};
-    margin-bottom: 15px;
-  }
+const FirstName = styled.h1`
+  font-size: 8vw;
+  font-weight: bold;
+  z-index: 2;
+  color: ${({ theme }) => theme.background};
+  mix-blend-mode: difference;
+  transform: scale(1, 1.8);
+`;
 
-  p {
-    font-size: 4vw;
-    max-width: 80%;
-    font-weight: regular;
-    color: ${({ theme }) => theme.textSecondary};
-  }
+const LastName = styled.h1`
+  font-size: 8vw;
+  font-weight: bold;
+  margin: 0;
+  z-index: 2;
+  color: ${({ theme }) => theme.background};
+  mix-blend-mode: difference;
+  transform: scale(1.5, 0.8);
+  transform-origin: left;
 `;
 
 const Home: NextPage = () => {
@@ -68,10 +66,18 @@ const Home: NextPage = () => {
     <Wrapper>
       <Nav />
       <LandingContainer>
-        <FloatingProjects />
-        <Name>CODY MILLER,</Name>
-        <Occupation>DEVELOPER AND DESIGNER.</Occupation>
+        <Name>
+          <FirstName>CODY</FirstName>
+          <LastName>MILLER</LastName>
+        </Name>
+
+        <Occupation>
+          SOFTWARE ENGINEER,
+          <br />
+          DESIGNER
+        </Occupation>
       </LandingContainer>
+      <FloatingProjects />
     </Wrapper>
   );
 };

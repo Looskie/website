@@ -7,7 +7,6 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
 `;
 
 const Project = styled(Parallax)`
@@ -16,13 +15,14 @@ const Project = styled(Parallax)`
   display: flex;
   height: 250px;
   background: ${({ theme }) => theme.secondaryBackground};
-  bottom: -5%;
-  right: 10%;
+  bottom: 10%;
+  right: -5%;
   border-radius: 8px;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
 
   &:first-of-type {
     top: 10%;
-    left: 5%;
+    left: 20%;
   }
 
   img {
@@ -30,6 +30,7 @@ const Project = styled(Parallax)`
     width: auto;
     height: 100%;
     border-radius: 8px;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
   }
 `;
 
