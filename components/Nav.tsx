@@ -6,7 +6,7 @@ const NavWrapper = styled.ul`
   justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 7vw;
+  width: 7em;
   position: absolute;
   left: 0;
   writing-mode: vertical-rl;
@@ -14,7 +14,7 @@ const NavWrapper = styled.ul`
 
   li {
     list-style: none;
-    font-size: 8vh;
+    font-size: 3em;
     font-weight: bold;
     margin-top: 20px;
 

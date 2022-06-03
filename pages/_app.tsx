@@ -32,11 +32,12 @@ function Website({ Component, pageProps }: AppProps) {
 
     return loadCursor(cursorCanvas.current);
   }, []);
+
   return (
     <ThemeProvider theme={LightTheme}>
       <GlobalStyle />
+      <Cursor ref={cursorCanvas} />
       <ParallaxProvider>
-        <Cursor ref={cursorCanvas} />
         <Component {...pageProps} />
       </ParallaxProvider>
     </ThemeProvider>
