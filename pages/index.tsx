@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import HorizontalScroll from "react-scroll-horizontal";
 import styled from "styled-components";
 import { Nav } from "../components";
+import { WorkItem } from "../components/WorkItem";
 import { FloatingProjects } from "../components/FloatingProjects";
 
 const Wrapper = styled.div`
@@ -18,7 +19,7 @@ const LandingContainer = styled.div`
   align-items: flex-end;
   justify-content: center;
   margin: 0 7em;
-  min-width: 90vw;
+  min-width: 1250px;
   min-height: 100vh;
 `;
 
@@ -35,6 +36,23 @@ const Section = styled.div`
     font-size: 2em;
     max-width: 50ch;
     margin-top: 8vw;
+  }
+`;
+
+const WorksWrapper = styled.div`
+  display: flex;
+  margin-top: 80px;
+
+  ul {
+    list-style: none;
+
+    li {
+      font-size: 4em;
+      font-weight: 500;
+      opacity: 0.55;
+      cursor: pointer;
+      color ${({ theme }) => theme.textSecondary};
+    }
   }
 `;
 
@@ -125,7 +143,30 @@ const Home: NextPage = () => {
         </Section>
         <Section>
           <Title>WORKS</Title>
-          <p>not yet implemented</p>
+          <WorksWrapper>
+            <ul>
+              <WorkItem
+                alt="OFFWHITE"
+                image="/img/designs/offwhite.png"
+                text="OFFWHITE"
+              />
+              <WorkItem
+                alt="QUADECA"
+                image="/img/designs/QUADECA.png"
+                text="QUADECA"
+              />
+              <WorkItem
+                alt="DBRAND"
+                image="/img/designs/offwhite.png"
+                text="DBRAND"
+              />
+              <WorkItem
+                alt="ARIES"
+                image="/img/designs/offwhite.png"
+                text="ARIES"
+              />
+            </ul>
+          </WorksWrapper>
         </Section>
         <Section>
           <Title>CONTACT</Title>
