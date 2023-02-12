@@ -27,7 +27,7 @@ export default function Home(): JSX.Element {
           love building things for the web and tools for people from all over
           the world to use. I&apos;ve contributed to many Open Source(d)
           organizations, and have worked for two notable names, dahliaOS and
-          BlissOS. I am currently working at Giggl.
+          BlissOS. I am currently working at Hop.
         </p>
 
         <div className='spaceInBetweenSections' />
@@ -36,6 +36,20 @@ export default function Home(): JSX.Element {
         <span className='headingStarter'>//</span>
         <h1>PROJECTS</h1>
         <div className='grid'>
+          <div className='gridItem'>
+            <h1 className='gridHeader'>Hop</h1>
+            <p className='gridParagraph'>
+              Hop is a cloud provider that enables you to deploy any service to the cloud. No more configs, no more fuss, just push your code.
+            </p>
+            <a
+              href='https://hop.io/'
+              className='gridLink'
+              target='_blank'
+              rel='noreferrer'
+            >
+              WEBSITE
+            </a>
+          </div>
           <div className='gridItem'>
             <h1 className='gridHeader'>IMPERIAL</h1>
             <p className='gridParagraph'>
@@ -51,6 +65,7 @@ export default function Home(): JSX.Element {
               WEBSITE
             </a>
           </div>
+          <br />
           <div className='gridItem'>
             <h1 className='gridHeader'>Hiven</h1>
             <p className='gridParagraph'>
@@ -65,7 +80,6 @@ export default function Home(): JSX.Element {
               WEBSITE
             </a>
           </div>
-          <br /> {/* We're breaking here so they don't go all inline */}
           <div className='gridItem'>
             <h1 className='gridHeader'>dahliaOS</h1>
             <p className='gridParagraph'>
@@ -81,6 +95,7 @@ export default function Home(): JSX.Element {
               WEBSITE
             </a>
           </div>
+          <br/>
           <div className='gridItem'>
             <h1 className='gridHeader'>Giggl</h1>
             <p className='gridParagraph'>
