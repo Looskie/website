@@ -16,7 +16,7 @@ const stitches = createStitches({
       primary400: "#a3a3a3",
       primary500: "#737373",
       primary600: "#525252",
-      primary700: "#404040",
+      primary700: "#303030",
       primary800: "#262626",
       primary900: "#171717",
     },

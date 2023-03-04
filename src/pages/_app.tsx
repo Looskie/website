@@ -23,6 +23,15 @@ const Wrapper = styled("main", {
   flexDirection: "column",
 });
 
+const backgroundAnimation = keyframes({
+  "0%, 100%": {
+    backgroundPosition: 0,
+  },
+  "50%": {
+    backgroundPosition: 500,
+  },
+});
+
 const Content = styled("div", {
   display: "flex",
   position: "relative",
@@ -31,6 +40,11 @@ const Content = styled("div", {
   overflow: "auto",
   overflowX: "hidden",
   padding: "$window-padding",
+  backgroundSize: "7em 16em",
+  backgroundImage:
+    "linear-gradient(90deg,rgba(38,38,38,.7) 1px,transparent 0),linear-gradient(180deg,rgba(38,38,38,.7) 1px,transparent 0)",
+
+  animation: `${backgroundAnimation.name} 10s linear infinite`,
 });
 
 const Cursor = styled("div", {

@@ -3,7 +3,7 @@ import { theme } from "../../stitches.config";
 /**
  * Begins the render loop for the ball under the cursor
  *
- * stole this from alistair
+ * this was partially stolen from alistair (i changed it a bit tho)
  *
  * @param ball The HTML element to load the ball into
  * @return A callback to remove all listeners. This is so that you can safely use this function inside of a useEffect.
