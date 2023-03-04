@@ -29,6 +29,20 @@ const WORK = [
       "IMPERIAL is a code/text storing site where you can share, edit, or encrypt documents.",
   },
   {
+    company: "Capybara API",
+    position: "Fullstack Engineer",
+    link: "https://capy.lol/",
+    description:
+      "capy.lol is a free, open-source API that allows you to generate random images of capybaras.",
+  },
+  {
+    company: "Capybara tic-tac-toe",
+    position: "Fullstack Engineer",
+    link: "https://tic-tac-toe.capy.lol/",
+    description:
+      "Proof-of-concept for a multiplayer tic-tac-toe game using Hop Channels",
+  },
+  {
     company: "Subso",
     position: "Android Developer",
     link: "https://sub.so",
@@ -56,19 +70,13 @@ const WORK = [
     description:
       "Gumroad is a platform for creators to sell directly to their audience.",
   },
+
   {
-    company: "Capybara API",
+    company: "Hits",
     position: "Fullstack Engineer",
-    link: "https://capy.lol/",
+    link: "https://hits-app.vercel.app/",
     description:
-      "capy.lol is a free, open-source API that allows you to generate random images of capybaras.",
-  },
-  {
-    company: "Capybara tic-tac-toe",
-    position: "Fullstack Engineer",
-    link: "https://tic-tac-toe.capy.lol/",
-    description:
-      "Proof-of-concept for a multiplayer tic-tac-toe game using Hop Channels",
+      "A customizable and super fast badge for displaying hits for any link",
   },
 ];
 
