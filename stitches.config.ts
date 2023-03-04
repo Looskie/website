@@ -55,11 +55,11 @@ const stitches = createStitches({
   media: {
     small: "(max-width: 880px)",
     xsmall: "(max-width: 580px)",
-    mobile: "(max-width: 380px)",
+    mobile: "(max-width: 440px)",
   },
 });
 
-export const { styled, css, keyframes, getCssText, theme } = stitches;
+export const { styled, css, keyframes, getCssText, theme, config } = stitches;
 
 export const globalCss = stitches.globalCss({
   "*, *:before, *:after": {
@@ -75,6 +75,7 @@ export const globalCss = stitches.globalCss({
     fontSize: 16,
     overflowX: "hidden",
     minHeight: 600,
+    width: "100%",
   },
 
   p: {

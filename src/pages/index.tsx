@@ -1,7 +1,8 @@
+/* eslint-disable no-negated-condition */
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
-import { styled } from "../../stitches.config";
+import { config, styled } from "../../stitches.config";
 import AnimatedText from "../components/AnimatedText";
 import { TitleWrapper } from "../components/CommonPageStyles";
 
@@ -27,6 +28,10 @@ const Background = styled(motion.div, {
   top: 0,
   left: 0,
 
+  "@mobile": {
+    display: "none",
+  },
+
   variants: {
     direction: {
       horizontal: {
@@ -47,6 +52,37 @@ export default function Home() {
 
   useEffect(() => {
     const startAnimation = async () => {
+      if (window.innerWidth < 480) {
+        void animationControls.start({
+          translateX: "0",
+          translateY: "0",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+
+        void horizontalBackgroundControls.start({
+          translateY: "-100%",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+
+        void verticalBackgroundControls.start({
+          translateY: "-100%",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+        return;
+      }
+
       await animationControls.start({
         translateX: "50%",
         translateY: "50%",

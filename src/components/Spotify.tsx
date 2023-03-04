@@ -7,6 +7,10 @@ const Wrapper = styled(motion.div, {
   position: "absolute",
   bottom: "calc($4 + 15vh)",
   right: "$window-padding",
+
+  "@mobile": {
+    maxWidth: "calc(100% - (2 * 3em))",
+  },
 });
 
 const Container = styled(motion.div, {
@@ -19,6 +23,11 @@ const Container = styled(motion.div, {
   fontSize: "$small",
   overflow: "hidden",
   whiteSpace: "nowrap",
+
+  "@mobile": {
+    maxWidth: "100%",
+    width: "100%",
+  },
 
   "> img": {
     width: 90,

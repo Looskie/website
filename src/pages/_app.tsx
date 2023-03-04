@@ -20,6 +20,7 @@ const Content = styled("div", {
   flexDirection: "column",
   height: "85vh",
   overflow: "auto",
+  overflowX: "hidden",
   padding: "$window-padding",
 });
 

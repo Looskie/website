@@ -5,11 +5,13 @@ import { useRouter } from "next/router";
 
 const Wrapper = styled("nav", {
   display: "flex",
+  position: "fixed",
+  bottom: 0,
   alignItems: "center",
   height: "15vh",
+  width: "100%",
   padding: "0 $window-padding 0 $window-padding",
   borderTop: "1px solid $primary700",
-  minWidth: 500,
   marginTop: "auto",
   overflowX: "auto",
 
