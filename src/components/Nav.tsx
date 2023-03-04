@@ -19,6 +19,7 @@ const Wrapper = styled("nav", {
   h2: {
     flexGrow: 1,
     paddingRight: "$window-padding",
+
     "> a": {
       textTransform: "capitalize!important",
     },
