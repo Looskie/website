@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { styled } from "../../stitches.config";
+import { styled, theme } from "../../stitches.config";
 import AnimatedPage from "../components/AnimatedPage";
 import AnimatedText from "../components/AnimatedText";
 import { TitleWrapper } from "../components/CommonPageStyles";
@@ -57,7 +57,7 @@ export default function Contact() {
           </a>
         </li>
         <li>
-          <GitHubIcon fill="white" />
+          <GitHubIcon fill={theme.colors.primary300.toString()} />
           <a href={GITHUB} target="_blank" rel="noreferrer">
             @looskie
           </a>

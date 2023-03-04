@@ -1,11 +1,12 @@
+import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
+import { useEffect, useRef } from "react";
+import Div100vh from "react-div-100vh";
 import { globalCss, keyframes, styled } from "../../stitches.config";
 import Nav from "../components/Nav";
 import Spotify from "../components/Spotify";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import { loadCursor } from "../utils/cursor";
-import Div100vh from "react-div-100vh";
+import usePreferredTheme from "../utils/hooks/usePreferredTheme";
 
 const svgAnimation = keyframes({
   "0%": {
@@ -42,7 +43,7 @@ const Content = styled("div", {
   padding: "$window-padding",
   backgroundSize: "7em 16em",
   backgroundImage:
-    "linear-gradient(90deg,rgba(38,38,38,.7) 1px,transparent 0),linear-gradient(180deg,rgba(38,38,38,.7) 1px,transparent 0)",
+    "linear-gradient(90deg,$highlight 1px,transparent 0),linear-gradient(180deg,$highlight 1px,transparent 0)",
 
   animation: `${backgroundAnimation.name} 10s linear infinite`,
 });
@@ -83,6 +84,8 @@ const Cursor = styled("div", {
 
 export default function App({ Component, pageProps }: AppProps) {
   const cursorCanvas = useRef<HTMLDivElement>(null);
+  usePreferredTheme();
+
   globalCss();
 
   useEffect(() => {

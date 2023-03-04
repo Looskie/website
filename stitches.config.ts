@@ -19,6 +19,8 @@ const stitches = createStitches({
       primary700: "#303030",
       primary800: "#262626",
       primary900: "#171717",
+
+      highlight: "rgba(38,38,38,.7)",
     },
     fonts: {
       main: `${JetBrains.style.fontFamily}, monospace`,
@@ -56,6 +58,23 @@ const stitches = createStitches({
     small: "(max-width: 880px)",
     xsmall: "(max-width: 580px)",
     mobile: "(max-width: 440px)",
+  },
+});
+
+export const lightTheme = stitches.createTheme("light", {
+  colors: {
+    // Primary
+    primary100: "#191817",
+    primary200: "#32312f",
+    primary300: "#4b4946",
+    primary400: "#7d7b75",
+    primary500: "#95938c",
+    primary600: "#aeaca4",
+    primary700: "#c7c4bb",
+    primary800: "#e6dfcb",
+    primary900: "#F9F5EA",
+
+    highlight: "rgba(223, 223, 223, 0.7)",
   },
 });
 
