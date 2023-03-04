@@ -1,3 +1,5 @@
+import { theme } from "../../stitches.config";
+
 /**
  * Begins the render loop for the ball under the cursor
  *
@@ -33,9 +35,25 @@ export function loadCursor(ball: HTMLDivElement) {
     y = event.touches[0].pageY;
   };
 
+  const getHoveredElement = (event: MouseEvent, targetTagName: string) => {
+    const element = document.elementFromPoint(event.clientX, event.clientY);
+
+    return element?.tagName === targetTagName ? element : null;
+  };
+
   const mouseMove = (event: MouseEvent) => {
     x = event.pageX;
     y = event.pageY;
+
+    if (getHoveredElement(event, "A")) {
+      ball.style.transform = "scale(1.9)";
+      ball.style.background = theme.colors.primary400.toString();
+      ball.setAttribute("data-hover-type", "link");
+    } else if (ball.style.transform === "scale(1.9)") {
+      ball.style.transform = "scale(1)";
+      ball.style.background = "transparent";
+      ball.setAttribute("data-hover-type", "");
+    }
   };
 
   const mouseDown = () => {
