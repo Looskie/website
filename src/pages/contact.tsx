@@ -37,7 +37,10 @@ export default function Contact() {
     <AnimatedPage>
       <Head>
         <title>Cody Miller</title>
-        <meta name="description" content="Cody" />
+        <meta
+          name="description"
+          content="contact me through any of my socials"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

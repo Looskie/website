@@ -90,6 +90,7 @@ export const globalCss = stitches.globalCss({
     fontStyle: "italic",
     willChange: "transform",
     transformOrigin: "left",
+    textTransform: "lowercase",
     transition: "all 0.15s ease-in-out",
 
     "&:hover": {

@@ -9,7 +9,10 @@ export default function About() {
     <AnimatedPage>
       <Head>
         <title>Cody Miller</title>
-        <meta name="description" content="Cody" />
+        <meta
+          name="description"
+          content="i'm cody, a 17 year old software engineer and designer based in the United States."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

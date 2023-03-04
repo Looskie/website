@@ -19,6 +19,9 @@ const Wrapper = styled("nav", {
   h2: {
     flexGrow: 1,
     paddingRight: "$window-padding",
+    "> a": {
+      textTransform: "capitalize!important",
+    },
   },
 
   ul: {
@@ -60,7 +63,7 @@ const Nav = () => {
     <Wrapper>
       <h2>
         <Link href="/">
-          <motion.span>CM</motion.span>
+          <span>CM</span>
         </Link>
       </h2>
       <motion.ul animate="animate" initial="initial" transition={TRANSITION}>
