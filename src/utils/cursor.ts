@@ -38,8 +38,13 @@ export function loadCursor(ball: HTMLDivElement) {
     y = event.pageY;
   };
 
-  const mouseDown = () => (ball.style.transform = "scale(1.5)");
-  const mouseUp = () => (ball.style.transform = "scale(1)");
+  const mouseDown = () => {
+    ball.style.transform = "scale(1.5)";
+  };
+
+  const mouseUp = () => {
+    ball.style.transform = "scale(1)";
+  };
 
   window.addEventListener("touchstart", touch);
   window.addEventListener("touchmove", touch);
