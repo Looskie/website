@@ -1,232 +1,176 @@
+import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
+import { useEffect } from "react";
+import { config, styled } from "../../stitches.config";
+import AnimatedText from "../components/AnimatedText";
+import { TitleWrapper } from "../components/CommonPageStyles";
 
-import { Spotify } from "../components/spotify";
-import { Consts } from "../misc/consts";
+const MotionTitleWrapper = motion(TitleWrapper);
 
-export default function Home(): JSX.Element {
+const Wrapper = styled(motion.div, {
+  display: "flex",
+  flexDirection: "column",
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  padding: "$window-padding",
+  zIndex: 999,
+  pointerEvents: "none",
+});
+
+const Background = styled(motion.div, {
+  width: "100%",
+  height: "100%",
+  position: "fixed",
+  top: 0,
+  left: 0,
+
+  "@mobile": {
+    display: "none",
+  },
+
+  variants: {
+    direction: {
+      horizontal: {
+        background: "$primary700",
+      },
+      vertical: {
+        background: "$primary800",
+      },
+    },
+  },
+});
+
+export default function Home() {
+  const horizontalBackgroundControls = useAnimation();
+  const verticalBackgroundControls = useAnimation();
+  const backgroundControls = useAnimation();
+  const animationControls = useAnimation();
+
+  useEffect(() => {
+    const startAnimation = async () => {
+      if (window.innerWidth < 480) {
+        void animationControls.start({
+          translateX: "0",
+          translateY: "0",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+
+        void horizontalBackgroundControls.start({
+          translateY: "-100%",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+
+        void verticalBackgroundControls.start({
+          translateY: "-100%",
+
+          transition: {
+            duration: 0,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        });
+        return;
+      }
+
+      await animationControls.start({
+        translateX: "50%",
+        translateY: "50%",
+
+        transition: {
+          duration: 1,
+          ease: [0.785, 0.135, 0.15, 0.0],
+        },
+      });
+
+      void horizontalBackgroundControls.start({
+        translateY: "-100%",
+
+        transition: {
+          duration: 1,
+          ease: [0.25, 0.1, 0.35, 0.96],
+        },
+      });
+
+      await animationControls.start({
+        translateX: "50%",
+        translateY: "0",
+
+        transition: {
+          duration: 1.1,
+          ease: [0.25, 0.1, 0.35, 0.96],
+        },
+      });
+
+      void verticalBackgroundControls.start({
+        translateX: "-100%",
+
+        transition: {
+          duration: 0.9,
+          ease: [0.25, 0.1, 0.35, 0.96],
+        },
+      });
+
+      await animationControls.start({
+        translateX: "0",
+        translateY: "0",
+
+        transition: {
+          duration: 1.1,
+          ease: [0.25, 0.1, 0.35, 0.96],
+        },
+      });
+    };
+
+    void startAnimation();
+  }, []);
+
   return (
-    <div className='centerThisPlease'>
+    <>
       <Head>
-        <title>DEVLOOSKIE - Home</title>
+        <title>cody</title>
+        <meta
+          name="description"
+          content="im cody, a 17 year old software engineer and designer based in the United States."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav>
-        <a href='#' className='noOpacity'>
-          <img src='./img/logo.png' alt="DEVLOOSKIE'S LOGO" className='logo' />
-        </a>
-        <h6>DEVLOOSKIE</h6>
-      </nav>
-      <main>
-        {/* SPOTIFY */}
-        <Spotify />
 
-        {/* ABOUT */}
-        <span className='headingStarter'>//</span>
-        <h1>ABOUT</h1>
-        <p>
-          Hey, I&apos;m Cody, a 17 y/o full-stack web developer & designer. I
-          love building things for the web and tools for people from all over
-          the world to use. I&apos;ve contributed to many Open Source(d)
-          organizations, and have worked for two notable names, dahliaOS and
-          BlissOS. I am currently working at Hop.
-        </p>
+      <Wrapper animate={backgroundControls}>
+        <Background direction="vertical" animate={verticalBackgroundControls} />
+        <Background
+          direction="horizontal"
+          animate={horizontalBackgroundControls}
+        />
 
-        <div className='spaceInBetweenSections' />
+        <MotionTitleWrapper
+          style={{
+            translateX: "50%",
+            translateY: "50%",
+          }}
+          animate={animationControls}
+        >
+          <AnimatedText element="h1" text="Cody" />
+          <AnimatedText element="h1" text="Miller" />
 
-        {/* PROJECTS */}
-        <span className='headingStarter'>//</span>
-        <h1>PROJECTS</h1>
-        <div className='grid'>
-          <div className='gridItem'>
-            <h1 className='gridHeader'>Hop</h1>
-            <p className='gridParagraph'>
-              Hop is a cloud provider that enables you to deploy any service to the cloud. No more configs, no more fuss, just push your code.
-            </p>
-            <a
-              href='https://hop.io/'
-              className='gridLink'
-              target='_blank'
-              rel='noreferrer'
-            >
-              WEBSITE
-            </a>
-          </div>
-          <div className='gridItem'>
-            <h1 className='gridHeader'>IMPERIAL</h1>
-            <p className='gridParagraph'>
-              IMPERIAL is a code/text storing site where you can share, edit, or
-              encrypt documents.
-            </p>
-            <a
-              href='https://imperialb.in/'
-              className='gridLink'
-              target='_blank'
-              rel='noreferrer'
-            >
-              WEBSITE
-            </a>
-          </div>
-          <br />
-          <div className='gridItem'>
-            <h1 className='gridHeader'>Hiven</h1>
-            <p className='gridParagraph'>
-              Privacy-focussed chat for communities and people that live in the future. Premium groups, encrypted chat, voice chat & more.
-            </p>
-            <a
-              href='https://hiven.io'
-              className='gridLink'
-              target='_blank'
-              rel='noreferrer'
-            >
-              WEBSITE
-            </a>
-          </div>
-          <div className='gridItem'>
-            <h1 className='gridHeader'>dahliaOS</h1>
-            <p className='gridParagraph'>
-              dahliaOS is a modern, secure, lightweight and responsive operating
-              system, combining the best of GNU/Linux and Fuchsia OS.
-            </p>
-            <a
-              href='https://dahliaOS.io'
-              className='gridLink'
-              target='_blank'
-              rel='noreferrer'
-            >
-              WEBSITE
-            </a>
-          </div>
-          <br/>
-          <div className='gridItem'>
-            <h1 className='gridHeader'>Giggl</h1>
-            <p className='gridParagraph'>
-              From hosting virtual movie nights, browsing the web with friends or watching anime with your long-distance partner: Giggl lets you do that together in real-time.
-            </p>
-            <a
-              href='https://giggl.app'
-              className='gridLink'
-              target='_blank'
-              rel='noreferrer'
-            >
-              WEBSITE
-            </a>
-          </div>
-        </div>
-
-        <div className='spaceInBetweenSections' />
-
-        {/* DESIGNS */}
-        <span className='headingStarter'>//</span>
-        <h1>DESIGNS</h1>
-        <div className='designGrid'>
-          <div className='designGridItem'>
-            <a
-              className='noOpacity designGridAnchor'
-              href='https://www.instagram.com/p/CNEKawnAIKj/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img
-                src='/img/designs/QUADECA.webp'
-                className='designGridImage'
-                alt='QUADECA web design'
-              />
-            </a>
-          </div>
-          <div className='designGridItem'>
-            <a
-              className='noOpacity designGridAnchor'
-              href='https://www.instagram.com/p/CGdZlqiAao9/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img
-                src='/img/designs/OFFWHITE.webp'
-                className='designGridImage'
-                alt='OFFWHITE web design'
-              />
-            </a>
-          </div>
-          <br />
-          <div className='designGridItem'>
-            <a
-              className='noOpacity designGridAnchor'
-              href='https://www.instagram.com/p/CJHkHnGgxG6/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img
-                src='/img/designs/ARIES.webp'
-                className='designGridImage'
-                alt='ARIES web design'
-              />
-            </a>
-          </div>
-          <div className='designGridItem'>
-            <a
-              className='noOpacity designGridAnchor'
-              href='https://www.instagram.com/p/CDb3eGajPP_/'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <img
-                src='/img/designs/DBRAND.webp'
-                className='designGridImage'
-                alt='DBRAND web design'
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className='spaceInBetweenSections' />
-
-        {/* CONTACT */}
-        <span className='headingStarter'>//</span>
-        <h1>CONTACT</h1>
-        <ul className='socialMedias'>
-          <li className='socialMedia'>
-            <span className='socialStart'>\\</span>
-            <a
-              href={"https://instagram.com/" + Consts.instagram}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <h2>INSTAGRAM</h2>
-            </a>
-          </li>
-          <li className='socialMedia'>
-            <span className='socialStart'>\\</span>
-            <a
-              href={"https://twitter.com/" + Consts.twitter}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <h2>TWITTER</h2>
-            </a>
-          </li>
-          <li className='socialMedia'>
-            <span className='socialStart'>\\</span>
-            <a
-              href={"https://github.com/" + Consts.github}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <h2>GITHUB</h2>
-            </a>
-          </li>
-          <li className='socialMedia'>
-            <span className='socialStart'>\\</span>
-            <a
-              href={"https://discord.com/users/" + Consts.discordID}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <h2>DISCORD</h2>
-            </a>
-          </li>
-        </ul>
-
-        <div className='spaceInBetweenSections' />
-      </main>
-    </div>
+          <AnimatedText
+            element="span"
+            text="Software Engineer"
+            artificialDelay={2.5}
+          />
+          <AnimatedText element="span" text="Designer" artificialDelay={3.5} />
+        </MotionTitleWrapper>
+      </Wrapper>
+    </>
   );
 }
