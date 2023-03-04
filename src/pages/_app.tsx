@@ -33,6 +33,10 @@ const Cursor = styled("div", {
   mixBlendMode: "difference",
   transition: "opacity 0.15s, transform 0.15s",
   zIndex: 999999999,
+
+  "@mobile": {
+    display: "none",
+  },
 });
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -10,6 +10,7 @@ const Wrapper = styled("nav", {
   padding: "0 $window-padding 0 $window-padding",
   borderTop: "1px solid $primary700",
   minWidth: 500,
+  marginTop: "auto",
   overflowX: "auto",
 
   h2: {

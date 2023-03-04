@@ -21,7 +21,7 @@ const stitches = createStitches({
       primary900: "#171717",
     },
     fonts: {
-      main: `${JetBrains.style.fontFamily}`,
+      main: `${JetBrains.style.fontFamily}, monospace`,
     },
     fontSizes: {
       xsmall: "0.5em",
@@ -74,6 +74,7 @@ export const globalCss = stitches.globalCss({
     color: "$primary100",
     fontSize: 16,
     overflowX: "hidden",
+    minHeight: 600,
   },
 
   p: {
