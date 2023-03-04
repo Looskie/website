@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <AnimatedPage>
       <Head>
-        <title>Cody Miller</title>
+        <title>cody — contact</title>
         <meta
           name="description"
           content="contact me through any of my socials"

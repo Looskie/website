@@ -50,7 +50,7 @@ export default function Work() {
   return (
     <AnimatedPage>
       <Head>
-        <title>Cody Miller</title>
+        <title>cody — work</title>
         <meta
           name="description"
           content="here are a few hand picked projects i've worked on recently."

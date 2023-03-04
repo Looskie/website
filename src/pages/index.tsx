@@ -137,7 +137,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cody Miller</title>
+        <title>cody</title>
         <meta
           name="description"
           content="im cody, a 17 year old software engineer and designer based in the United States."
