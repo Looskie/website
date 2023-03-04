@@ -71,7 +71,7 @@ export const lightTheme = stitches.createTheme("light", {
     primary500: "#95938c",
     primary600: "#aeaca4",
     primary700: "#c7c4bb",
-    primary800: "#e6dfcb",
+    primary800: "#F4EEDC",
     primary900: "#F9F5EA",
 
     highlight: "rgba(223, 223, 223, 0.7)",

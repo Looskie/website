@@ -23,6 +23,7 @@ const Container = styled(motion.div, {
   fontSize: "$small",
   overflow: "hidden",
   whiteSpace: "nowrap",
+  border: "1px solid $primary700",
 
   "@mobile": {
     maxWidth: "100%",
