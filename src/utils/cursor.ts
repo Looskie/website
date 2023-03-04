@@ -15,6 +15,8 @@ export function loadCursor(ball: HTMLDivElement) {
   let ballX = x;
   let ballY = y;
 
+  let hoveredElement: HTMLAnchorElement | undefined;
+
   const drawBall = () => {
     ballX += (x - ballX) * 0.1 - 1;
     ballY += (y - ballY) * 0.1 - 1;
@@ -49,10 +51,14 @@ export function loadCursor(ball: HTMLDivElement) {
       ball.style.transform = "scale(1.9)";
       ball.style.background = theme.colors.primary400.toString();
       ball.setAttribute("data-hover-type", "link");
+
+      hoveredElement = getHoveredElement(event, "A") as HTMLAnchorElement;
     } else if (ball.style.transform === "scale(1.9)") {
       ball.style.transform = "scale(1)";
       ball.style.background = "transparent";
       ball.setAttribute("data-hover-type", "");
+
+      hoveredElement = undefined;
     }
   };
 
@@ -62,6 +68,10 @@ export function loadCursor(ball: HTMLDivElement) {
 
   const mouseUp = () => {
     ball.style.transform = "scale(1)";
+
+    if (hoveredElement) {
+      ball.style.transform = "scale(1.9)";
+    }
   };
 
   window.addEventListener("touchstart", touch);

@@ -14,6 +14,7 @@ const Wrapper = styled("nav", {
   borderTop: "1px solid $primary700",
   marginTop: "auto",
   overflowX: "auto",
+  background: "$primary900",
 
   h2: {
     flexGrow: 1,

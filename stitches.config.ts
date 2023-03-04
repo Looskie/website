@@ -73,9 +73,7 @@ export const globalCss = stitches.globalCss({
     background: "$primary900",
     color: "$primary100",
     fontSize: 16,
-    overflowX: "hidden",
-    minHeight: 600,
-    width: "100%",
+    overflow: "hidden",
   },
 
   p: {

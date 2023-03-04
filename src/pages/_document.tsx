@@ -17,6 +17,8 @@ export default function Document() {
           name="keywords"
           content="Developer, Devlooskie, DEVLOOSKIE, looskie, looskie, dev, developer ui, ui, ux, html, js, css, looskie.com, looskieee, twitter, instagram, frontend webdeveloper, frontend webdeveloper windsor, windsor, whs, web, webdeveloper, designs, "
         />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: getCssText() }}

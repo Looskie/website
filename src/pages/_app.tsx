@@ -5,6 +5,7 @@ import Spotify from "../components/Spotify";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { loadCursor } from "../utils/cursor";
+import Div100vh from "react-div-100vh";
 
 const svgAnimation = keyframes({
   "0%": {
@@ -16,7 +17,6 @@ const svgAnimation = keyframes({
 });
 
 const Wrapper = styled("main", {
-  minHeight: "100vh",
   height: "100%",
   width: "100%",
   display: "flex",
@@ -27,7 +27,7 @@ const Content = styled("div", {
   display: "flex",
   position: "relative",
   flexDirection: "column",
-  height: "85vh",
+  height: "85%",
   overflow: "auto",
   overflowX: "hidden",
   padding: "$window-padding",
@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <>
+    <Div100vh>
       <Cursor ref={cursorCanvas}>
         <svg
           width="30"
@@ -111,6 +111,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Spotify />
         <Nav />
       </Wrapper>
-    </>
+    </Div100vh>
   );
 }
