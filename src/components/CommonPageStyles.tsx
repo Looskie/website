@@ -15,6 +15,7 @@ export const TitleWrapper = styled("div", {
 
     "@xsmall": {
       fontSize: "$2xlarge",
+      lineHeight: "5rem",
     },
 
     "@mobile": {
