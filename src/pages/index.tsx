@@ -1,4 +1,3 @@
-/* eslint-disable no-negated-condition */
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
