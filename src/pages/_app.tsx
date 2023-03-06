@@ -6,6 +6,7 @@ import { globalCss, keyframes, styled } from "../../stitches.config";
 import Nav from "../components/Nav";
 import Spotify from "../components/Spotify";
 import { loadCursor } from "../utils/cursor";
+import { Analytics } from "@vercel/analytics/react";
 import usePreferredTheme from "../utils/hooks/usePreferredTheme";
 
 const svgAnimation = keyframes({
@@ -128,6 +129,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Spotify />
         <Nav />
       </Wrapper>
+      <Analytics />
     </Div100vh>
   );
 }
