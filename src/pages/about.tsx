@@ -30,7 +30,7 @@ export default function About() {
         capybaras, and writing open source software!
         <br />
         <br />
-        current working on{" "}
+        currently working on{" "}
         <a href="https://hop.io" target="_blank" rel="noreferrer">
           Hop
         </a>
