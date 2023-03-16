@@ -13,7 +13,7 @@ export default function About() {
           name="description"
           content="hey, i'm cody, a 17 year old software engineer and designer based in the
         united states. i strive to build unique and polished web
-        interfaces both for consumer and business ends. i love lacrosse,
+        interfaces for both consumer and business ends. i love lacrosse,
         capybaras, and writing open source software! i'm currently working on hop"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,7 +26,7 @@ export default function About() {
       <p>
         hey, i'm cody, a 17 year old software engineer and designer based in the
         united states. i strive to build unique and polished web
-        interfaces both for consumer and business ends. i love lacrosse,
+        interfaces for both consumer and business ends. i love lacrosse,
         capybaras, and writing open source software!
         <br />
         <br />
