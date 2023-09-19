@@ -11,7 +11,7 @@ export default function About() {
         <title>cody — about</title>
         <meta
           name="description"
-          content="hey, i'm cody, a 18 year old software engineer and designer based in the
+          content="hey, i'm cody, an 18 year old software engineer and designer based in the
         united states. i strive to build unique and polished web
         interfaces for both consumer and business ends. i love lacrosse,
         capybaras, and writing open source software! i'm currently working on hop"
@@ -24,7 +24,7 @@ export default function About() {
         <AnimatedText element="h1" text="About" />
       </TitleWrapper>
       <p>
-        hey, i'm cody, a 18 year old software engineer and designer based in the
+        hey, i'm cody, an 18 year old software engineer and designer based in the
         united states. i strive to build unique and polished web
         interfaces for both consumer and business ends. i love lacrosse,
         capybaras, and writing open source software!
