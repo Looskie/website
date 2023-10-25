@@ -1858,14 +1858,6 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-use-lanyard@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/react-use-lanyard/-/react-use-lanyard-0.3.0.tgz#058062d3df4e4bd61929c2f3c95ebb43b2f86d76"
-  integrity sha512-kUglLmUU5b1YK+EF+eMt2gH9SiWS1tk2vF1G8fR0/KVr/fPhYFOZm8XEDU9Xbeix2kNfHm+f1qUnLNuDmUIojA==
-  dependencies:
-    swr "^2.0.4"
-    tslib "^2.5.0"
-
 react@18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-18.2.0.tgz#555bd98592883255fa00de14f1151a917b5d77d5"
@@ -2073,13 +2065,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swr@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/swr/-/swr-2.0.4.tgz#e68a5cc2e87b2a7f5f7ebf8a472cea24fc1c5fce"
-  integrity sha512-4GUiTjknRUVuw4MWUHR7mzJ9G/DWL+yZz/TgWDfiA0OZ9tL6qyrTkN2wPeboBpL3OJTkej3pexh3mWCnv8cFkQ==
-  dependencies:
-    use-sync-external-store "^1.2.0"
-
 synckit@^0.8.4:
   version "0.8.5"
   resolved "https://registry.yarnpkg.com/synckit/-/synckit-0.8.5.tgz#b7f4358f9bb559437f9f167eb6bc46b3c9818fa3"
@@ -2183,10 +2168,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sync-external-store@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
-  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+use-lanyard@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/use-lanyard/-/use-lanyard-1.5.1.tgz#01a9fba5eaacc92161f6dd18e89b081be2e2119c"
+  integrity sha512-hckARF80zWduwplQQ56RqHfsU7pqP0m69Wd3XYvFuz0zXM5ssoDT7eECPgps4oZ+C2SXK+Z/MgEbGfJQ2ZIyNA==
 
 which-boxed-primitive@^1.0.2:
   version "1.0.2"

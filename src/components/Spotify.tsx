@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useLanyard } from "react-use-lanyard/dist";
+import { useLanyardWS } from "use-lanyard";
 import { styled } from "../../stitches.config";
 import { DISCORD_ID } from "../utils/constants";
 
@@ -135,17 +135,9 @@ const SHORT_TRANSITION = {
 };
 
 const Spotify = () => {
-  const { loading, status } = useLanyard({
-    userId: DISCORD_ID,
-    socket: true,
-  });
+  const data = useLanyardWS(DISCORD_ID);
 
-  if (
-    loading ||
-    status === undefined ||
-    !status?.listening_to_spotify ||
-    status.spotify === undefined
-  ) {
+  if (!data?.spotify) {
     return null;
   }
 
@@ -160,8 +152,8 @@ const Spotify = () => {
         <Container layout whileHover="animate" exit="initial" initial="initial">
           <motion.img
             variants={ALBUM_ART_ANIMATION}
-            src={status.spotify.album_art_url}
-            alt={`${status.spotify.song} by ${status.spotify.artist}`}
+            src={data.spotify.album_art_url ?? ""}
+            alt={`${data.spotify.song} by ${data.spotify.artist}`}
             transition={LONG_TRANSITION}
           />
           <motion.span
@@ -176,7 +168,7 @@ const Spotify = () => {
               Listening now
             </motion.h2>
             <p>
-              {status.spotify.song} - {status.spotify.artist}
+              {data.spotify.song} - {data.spotify.artist}
             </p>
           </div>
         </Container>

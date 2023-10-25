@@ -17,8 +17,8 @@
     "react": "18.2.0",
     "react-div-100vh": "^0.7.0",
     "react-dom": "18.2.0",
-    "react-use-lanyard": "^0.3.0",
-    "typescript": ">=4.4"
+    "typescript": ">=4.4",
+    "use-lanyard": "^1.5.1"
   },
   "devDependencies": {
     "@types/node": "18.13.0",
