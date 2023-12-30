@@ -1,11 +1,15 @@
-import { theme } from "../../stitches.config";
-
 /**
  * Begins the render loop for the ball under the cursor
  *
  * @param ball The HTML element to load the ball into
  * @return A callback to remove all listeners. This is so that you can safely use this function inside of a useEffect.
  */
+
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+
+const fullConfig = resolveConfig(tailwindConfig);
+
 export function loadCursor(ball: HTMLDivElement) {
   let x = window.innerWidth / 2;
   let y = window.innerHeight / 2;
@@ -47,7 +51,7 @@ export function loadCursor(ball: HTMLDivElement) {
 
     if (getHoveredElement(event, "A")) {
       ball.style.transform = "scale(1.9)";
-      ball.style.background = theme.colors.primary400.toString();
+      ball.style.background = fullConfig.theme.colors.primary[400];
       ball.setAttribute("data-hover-type", "link");
 
       hoveredElement = getHoveredElement(event, "A") as HTMLAnchorElement;

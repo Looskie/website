@@ -1,50 +1,7 @@
 import Head from "next/head";
-import { styled } from "../../stitches.config";
-import AnimatedPage from "../components/AnimatedPage";
 import AnimatedText from "../components/AnimatedText";
-import { TitleWrapper } from "../components/CommonPageStyles";
+import AnimatedPage from "../components/PageWrapper";
 import { WORK } from "../utils/constants";
-
-const WorkWrapper = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: 100,
-});
-
-const WorkItem = styled("div", {
-  position: "relative",
-  display: "flex",
-  flexDirection: "column",
-  maxWidth: 700,
-
-  "> span": {
-    position: "absolute",
-    left: -45,
-    top: -30,
-    fontSize: "$xlarge",
-    color: "$primary100",
-    opacity: 0.12,
-  },
-
-  "> h2": {
-    fontSize: "$xlarge",
-    color: "$primary100",
-    marginBottom: 10,
-  },
-
-  "> p": {
-    fontSize: "$schmedium",
-    color: "$primary200",
-    lineHeight: 1.5,
-    fontWeight: 300,
-    marginBottom: 10,
-
-    "> span": {
-      fontWeight: 500,
-      color: "$primary400",
-    },
-  },
-});
 
 export default function Work() {
   return (
@@ -59,24 +16,33 @@ export default function Work() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TitleWrapper>
+      <div className="title__wrapper">
         <AnimatedText element="h1" text="Work" />
-      </TitleWrapper>
-      <WorkWrapper>
+      </div>
+      <div className="flex flex-col gap-[100px]">
         {WORK.map((work, index) => (
-          <WorkItem key={work.company}>
-            <span>{index.toString().padStart(2, "0")}</span>
-            <h2>{work.company}</h2>
-            <p>
-              <span>{work.position} — </span>
+          <div
+            className="relative flex flex-col max-w-[700px]"
+            key={work.company}
+          >
+            <span className="absolute -left-[45px] -top-[30px] text-5xl text-primary-100 opacity-10">
+              {index.toString().padStart(2, "0")}
+            </span>
+            <h2 className="text-5xl font-bold text-primary-100 mb-3">
+              {work.company}
+            </h2>
+            <p className="text-xl font-light text-primary-200 mb-3">
+              <span className="font-semibold text-primary-400">
+                {work.position} —{" "}
+              </span>
               {work.description}
             </p>
             <a href={work.link} target="_blank" rel="noreferrer">
               visit website
             </a>
-          </WorkItem>
+          </div>
         ))}
-      </WorkWrapper>
+      </div>
     </AnimatedPage>
   );
 }

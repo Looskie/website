@@ -1,47 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
-import { config, styled } from "../../stitches.config";
 import AnimatedText from "../components/AnimatedText";
-import { TitleWrapper } from "../components/CommonPageStyles";
-
-const MotionTitleWrapper = motion(TitleWrapper);
-
-const Wrapper = styled(motion.div, {
-  display: "flex",
-  flexDirection: "column",
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  padding: "$window-padding",
-  zIndex: 999,
-  pointerEvents: "none",
-});
-
-const Background = styled(motion.div, {
-  width: "100%",
-  height: "100%",
-  position: "fixed",
-  top: 0,
-  left: 0,
-
-  "@mobile": {
-    display: "none",
-  },
-
-  variants: {
-    direction: {
-      horizontal: {
-        background: "$primary700",
-      },
-      vertical: {
-        background: "$primary800",
-      },
-    },
-  },
-});
+import { cn } from "../utils/helpers";
 
 export default function Home() {
   const horizontalBackgroundControls = useAnimation();
@@ -79,6 +40,7 @@ export default function Home() {
             ease: [0.25, 0.1, 0.35, 0.96],
           },
         });
+
         return;
       }
 
@@ -146,14 +108,26 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Wrapper animate={backgroundControls}>
-        <Background direction="vertical" animate={verticalBackgroundControls} />
-        <Background
-          direction="horizontal"
-          animate={horizontalBackgroundControls}
-        />
+      <motion.div className="w-full h-full" animate={backgroundControls}>
+        {["vertical", "horizontal"].map((direction) => (
+          <motion.div
+            key={direction}
+            className={cn(
+              "w-full h-full fixed top-0 left-0 bg-primary-800 z-50 hidden md:block",
+              {
+                "bg-primary-700": direction === "horizontal",
+              }
+            )}
+            animate={
+              direction === "horizontal"
+                ? horizontalBackgroundControls
+                : verticalBackgroundControls
+            }
+          />
+        ))}
 
-        <MotionTitleWrapper
+        <motion.div
+          className="relative title__wrapper z-[51]"
           style={{
             translateX: "50%",
             translateY: "50%",
@@ -169,8 +143,8 @@ export default function Home() {
             artificialDelay={2.5}
           />
           <AnimatedText element="span" text="Designer" artificialDelay={3.5} />
-        </MotionTitleWrapper>
-      </Wrapper>
+        </motion.div>
+      </motion.div>
     </>
   );
 }

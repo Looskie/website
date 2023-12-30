@@ -2,8 +2,8 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 
 export const TwitterIcon = (props: IconProps) => (
   <svg
-    width="256px"
-    height="209px"
+    width="23.9"
+    height="19.5"
     viewBox="0 0 256 209"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +34,8 @@ export const LinkedInIcon = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32 32"
-    width="64"
-    height="64"
+    width="24"
+    height="24"
     {...props}
   >
     <path

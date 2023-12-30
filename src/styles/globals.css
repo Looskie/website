@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100dvh;
+  overflow: hidden;
+  @apply bg-primary-900;
+  @apply text-primary-100;
+}
+
+body,
+#__next {
+  height: 100%;
+}
+
+p {
+  max-width: 75ch;
+  @apply text-xl;
+}
+
+a {
+  position: relative;
+  display: inline-flex;
+  text-decoration: none;
+  width: fit-content;
+  font-style: italic;
+  will-change: transform;
+  transform-origin: left;
+  text-transform: lowercase;
+  @apply transition-all;
+  @apply text-primary-300;
+
+  &:hover {
+    transform: scaleX(1.15);
+
+    &:after {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: -2.25px;
+    width: 40%;
+    height: 2.25px;
+    @apply transition-[width];
+    @apply bg-primary-300;
+  }
+}
+
+[data-hover-type="link"] {
+  transform: scale(1.9);
+  @apply bg-primary-400;
+
+  > svg {
+    display: unset;
+    opacity: 1;
+  }
+}
+
+[data-hover-type=""] {
+  transform: scale(1);
+  @apply bg-transparent;
+}
+
+.title__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 778px;
+  margin-bottom: 80px;
+
+  > h1 {
+    font-size: 10em;
+    font-weight: 900;
+    line-height: 9rem;
+    text-transform: uppercase;
+    transform: scale(1.35, 0.8);
+    transform-origin: left;
+
+    @media (max-width: 880px) {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+  }
+
+  > span {
+    text-align: right;
+    font-size: 2rem;
+    width: 100%;
+
+    @media (max-width: 880px) {
+      text-align: left;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 880px) {
+    width: 100%;
+  }
+}

@@ -1,8 +1,6 @@
 import Head from "next/head";
-import { styled } from "../../stitches.config";
-import AnimatedPage from "../components/AnimatedPage";
 import AnimatedText from "../components/AnimatedText";
-import { TitleWrapper } from "../components/CommonPageStyles";
+import AnimatedPage from "../components/PageWrapper";
 
 export default function About() {
   return (
@@ -20,14 +18,14 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TitleWrapper>
+      <div className="title__wrapper">
         <AnimatedText element="h1" text="About" />
-      </TitleWrapper>
+      </div>
       <p>
-        hey, i'm cody, an 18 year old software engineer and designer based in the
-        united states. i strive to build unique and polished web
-        interfaces for both consumer and business ends. i love lacrosse,
-        capybaras, and writing open source software!
+        hey, i'm cody, an 18 year old software engineer and designer based in
+        the united states. i strive to build unique and polished web interfaces
+        for both consumer and business ends. i love lacrosse, capybaras, and
+        writing open source software!
         <br />
         <br />
         currently working on{" "}
