@@ -12,7 +12,7 @@ export default function Cursor() {
 
   return (
     <div
-      className="flex items-center justify-center fixed w-[30px] h-[30px] rounded-full pointer-events-none border-2 border-primary-400 mix-blend-difference transition-[opacity,transform,background] z-50"
+      className="flex items-center justify-center fixed w-[30px] h-[30px] opacity-0 rounded-full pointer-events-none border-2 border-primary-400 mix-blend-difference transition-[opacity,transform,background] z-50"
       ref={cursorRef}
     >
       <svg

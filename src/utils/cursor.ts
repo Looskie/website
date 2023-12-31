@@ -5,10 +5,7 @@
  * @return A callback to remove all listeners. This is so that you can safely use this function inside of a useEffect.
  */
 
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../tailwind.config";
-
-const fullConfig = resolveConfig(tailwindConfig);
+import { fullTwConfig } from "./constants";
 
 export function loadCursor(ball: HTMLDivElement) {
   let x = window.innerWidth / 2;
@@ -18,6 +15,7 @@ export function loadCursor(ball: HTMLDivElement) {
   let ballY = y;
 
   let hoveredElement: HTMLAnchorElement | undefined;
+  let lastMouseMove: Date | undefined;
 
   const drawBall = () => {
     ballX += (x - ballX) * 0.1 - 1;
@@ -30,6 +28,16 @@ export function loadCursor(ball: HTMLDivElement) {
   const loop = () => {
     drawBall();
     requestAnimationFrame(loop);
+
+    // If the mouse hasn't moved in 3 seconds, hide the ball
+    if (
+      lastMouseMove &&
+      new Date() > new Date(lastMouseMove.getTime() + 3_000) &&
+      ball.style.opacity !== "0" &&
+      ball.getAttribute("data-hover-type") !== "link"
+    ) {
+      ball.style.opacity = "0";
+    }
   };
 
   loop();
@@ -46,12 +54,13 @@ export function loadCursor(ball: HTMLDivElement) {
   };
 
   const mouseMove = (event: MouseEvent) => {
+    ball.style.opacity = "1";
     x = event.pageX;
     y = event.pageY;
 
     if (getHoveredElement(event, "A")) {
       ball.style.transform = "scale(1.9)";
-      ball.style.background = fullConfig.theme.colors.primary[400];
+      ball.style.background = fullTwConfig.theme.colors.primary[400];
       ball.setAttribute("data-hover-type", "link");
 
       hoveredElement = getHoveredElement(event, "A") as HTMLAnchorElement;
@@ -62,6 +71,8 @@ export function loadCursor(ball: HTMLDivElement) {
 
       hoveredElement = undefined;
     }
+
+    lastMouseMove = new Date();
   };
 
   const mouseDown = () => {
