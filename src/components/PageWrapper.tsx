@@ -13,7 +13,11 @@ const PAGE_ANIMATION = {
 };
 
 const AnimatedPage = ({ children }: { children?: ReactNode | undefined }) => (
-  <motion.div animate={PAGE_ANIMATION.animate} initial={PAGE_ANIMATION.initial}>
+  <motion.div
+    className="p-default-window-sm sm:p-default-window"
+    animate={PAGE_ANIMATION.animate}
+    initial={PAGE_ANIMATION.initial}
+  >
     {children}
   </motion.div>
 );

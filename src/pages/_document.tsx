@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from "next/document";
-import { getCssText } from "../../stitches.config";
+import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
@@ -11,11 +10,6 @@ export default function Document() {
           content="Developer, Devlooskie, DEVLOOSKIE, looskie, looskie, dev, developer ui, ui, ux, html, js, css, looskie.com, looskieee, twitter, instagram, frontend webdeveloper, frontend webdeveloper windsor, windsor, whs, web, webdeveloper, designs, "
         />
 
-        <style
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-          id="stitches"
-        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

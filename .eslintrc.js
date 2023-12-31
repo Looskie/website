@@ -45,5 +45,7 @@ module.exports = {
     "@typescript-eslint/indent": "off",
     "jsx-quotes": "off",
     "arrow-parens": ["error", "always"],
+    "react/prefer-read-only-props": "off",
+    radix: "off",
   },
 };

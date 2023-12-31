@@ -1,70 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanyardWS } from "use-lanyard";
-import { styled } from "../../stitches.config";
 import { DISCORD_ID } from "../utils/constants";
-
-const Wrapper = styled(motion.div, {
-  position: "absolute",
-  bottom: "calc($4 + 15vh)",
-  right: "$window-padding",
-
-  "@mobile": {
-    maxWidth: "calc(100% - (2 * 3em))",
-  },
-});
-
-const Container = styled(motion.div, {
-  maxWidth: 350,
-  display: "flex",
-  alignItems: "center",
-  background: "$primary800",
-  padding: "$2",
-  borderRadius: "$xlarge",
-  fontSize: "$small",
-  overflow: "hidden",
-  whiteSpace: "nowrap",
-  border: "1px solid $primary700",
-
-  "@mobile": {
-    maxWidth: "100%",
-    width: "100%",
-  },
-
-  "> img": {
-    width: 90,
-    height: 90,
-    borderRadius: "$xlarge",
-  },
-
-  "> span": {
-    position: "relative",
-    minWidth: 8,
-    minHeight: 8,
-    borderRadius: "50%",
-    background: "#1DB954",
-    margin: "0 $2 0 $1",
-  },
-
-  "> div": {
-    overflow: "hidden",
-
-    "> h2": {
-      fontSize: "$small",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      color: "#1DB954",
-      fontWeight: "800",
-    },
-
-    "> p": {
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      fontSize: "$small",
-    },
-  },
-});
 
 const WRAPPER_ANIMATION = {
   animate: {
@@ -99,6 +35,7 @@ const SPOTIFY_ICON_ANIMATION = {
     opacity: 0,
     height: 0,
     width: 0,
+    margin: 0,
   },
   initial: {
     opacity: 1,
@@ -134,47 +71,55 @@ const SHORT_TRANSITION = {
   duration: 0.15,
 };
 
-const Spotify = () => {
+export default function Spotify() {
   const data = useLanyardWS(DISCORD_ID);
-
-  if (!data?.spotify) {
-    return null;
-  }
 
   return (
     <AnimatePresence>
-      <Wrapper
-        animate={WRAPPER_ANIMATION.animate}
-        initial={WRAPPER_ANIMATION.initial}
-        exit={WRAPPER_ANIMATION.initial}
-        transition={SHORT_TRANSITION}
-      >
-        <Container layout whileHover="animate" exit="initial" initial="initial">
-          <motion.img
-            variants={ALBUM_ART_ANIMATION}
-            src={data.spotify.album_art_url ?? ""}
-            alt={`${data.spotify.song} by ${data.spotify.artist}`}
-            transition={LONG_TRANSITION}
-          />
-          <motion.span
-            variants={SPOTIFY_ICON_ANIMATION}
-            transition={SHORT_TRANSITION}
-          />
-          <div>
-            <motion.h2
-              variants={SPOTIFY_LISTENING_NOW_ANIMATION}
+      {data?.spotify ? (
+        <motion.div
+          className="absolute bottom-[calc(15vh_+_4vh)] left-default-window-sm sm:right-default-window sm:left-auto"
+          animate={WRAPPER_ANIMATION.animate}
+          initial={WRAPPER_ANIMATION.initial}
+          exit={WRAPPER_ANIMATION.initial}
+          transition={SHORT_TRANSITION}
+        >
+          <motion.div
+            layout
+            whileHover="animate"
+            exit="initial"
+            initial="initial"
+            className="max-w-[280px] md:max-w-[350px] flex gap-2 items-center bg-primary-800 p-2 rounded-xl overflow-hidden whitespace-nowrap border border-primary-700"
+          >
+            {data.spotify.album_art_url ? (
+              <motion.img
+                className="size-[90px] rounded-lg border border-primary-700"
+                variants={ALBUM_ART_ANIMATION}
+                src={data.spotify.album_art_url}
+                alt={`${data.spotify.song} by ${data.spotify.artist}`}
+                transition={LONG_TRANSITION}
+              />
+            ) : null}
+            <motion.span
+              className="relative min-w-[8px] min-h-[8px] rounded-full bg-green-500 mr-2"
+              variants={SPOTIFY_ICON_ANIMATION}
               transition={SHORT_TRANSITION}
-            >
-              Listening now
-            </motion.h2>
-            <p>
-              {data.spotify.song} - {data.spotify.artist}
-            </p>
-          </div>
-        </Container>
-      </Wrapper>
+            />
+            <div className="overflow-hidden">
+              <motion.h2
+                className="overflow-hidden text-ellipsis text-green-500 font-bold"
+                variants={SPOTIFY_LISTENING_NOW_ANIMATION}
+                transition={SHORT_TRANSITION}
+              >
+                Listening now
+              </motion.h2>
+              <p className="font-light overflow-hidden text-ellipsis text-[1em] mr-3">
+                {data.spotify.song} - {data.spotify.artist}
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+      ) : null}
     </AnimatePresence>
   );
-};
-
-export default Spotify;
+}

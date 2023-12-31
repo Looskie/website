@@ -1,17 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { motion } from "framer-motion";
 import React from "react";
-import { styled } from "../../stitches.config";
-
-const Word = styled(motion.span, {
-  display: "inline-block",
-  marginRight: "0.25em",
-  whiteSpace: "nowrap",
-});
-
-const Character = styled(motion.span, {
-  display: "inline-block",
-});
 
 const characterAnimation = {
   initial: {
@@ -42,8 +31,9 @@ const AnimatedText = ({
   artificialDelay,
 }: IAnimatedTextProps) => {
   const Children = text.split(" ").map((word, index) => (
-    <Word
+    <motion.span
       key={index}
+      className="inline-block mr-[0.25em] whitespace-nowrap"
       aria-hidden="true"
       initial="initial"
       animate="animate"
@@ -53,11 +43,16 @@ const AnimatedText = ({
       }}
     >
       {[...word].map((character, index) => (
-        <Character key={index} aria-hidden="true" variants={characterAnimation}>
+        <motion.span
+          key={index}
+          className="inline-block"
+          aria-hidden="true"
+          variants={characterAnimation}
+        >
           {character}
-        </Character>
+        </motion.span>
       ))}
-    </Word>
+    </motion.span>
   ));
 
   return React.createElement(element, { className }, Children);

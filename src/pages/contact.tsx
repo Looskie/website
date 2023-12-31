@@ -1,8 +1,5 @@
 import Head from "next/head";
-import { styled, theme } from "../../stitches.config";
-import AnimatedPage from "../components/AnimatedPage";
 import AnimatedText from "../components/AnimatedText";
-import { TitleWrapper } from "../components/CommonPageStyles";
 import {
   GitHubIcon,
   InstagramIcon,
@@ -10,27 +7,41 @@ import {
   MailIcon,
   TwitterIcon,
 } from "../components/Icons";
+import AnimatedPage from "../components/PageWrapper";
 import { GITHUB, INSTAGRAM, LINKEDIN, TWITTER } from "../utils/constants";
 
-const SocialList = styled("ul", {
-  display: "flex",
-  flexDirection: "column",
-  listStyle: "none",
-  gap: 25,
-  fontSize: "$schmedium",
-
-  li: {
-    display: "flex",
-    alignItems: "center",
-    gap: 15,
-    color: "$primary300",
-
-    "> svg": {
-      width: 30,
-      height: 30,
-    },
+const SOCIAL_ITEMS = [
+  {
+    platform: "twitter",
+    icon: <TwitterIcon width={30} height={30} />,
+    link: TWITTER,
+    handle: "@devlooskie",
   },
-});
+  {
+    platform: "github",
+    icon: <GitHubIcon width={30} height={30} className="fill-primary-300" />,
+    link: GITHUB,
+    handle: "@looskie",
+  },
+  {
+    platform: "linkedin",
+    icon: <LinkedInIcon width={30} height={30} />,
+    link: LINKEDIN,
+    handle: "@devlooskie",
+  },
+  {
+    platform: "instagram",
+    icon: <InstagramIcon width={30} height={30} />,
+    link: INSTAGRAM,
+    handle: "@devlooskie",
+  },
+  {
+    platform: "email",
+    icon: <MailIcon width={30} height={30} />,
+    link: "mailto:hello@looskie.com",
+    handle: "hello@looskie.com",
+  },
+];
 
 export default function Contact() {
   return (
@@ -45,39 +56,25 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <TitleWrapper>
+      <div className="title__wrapper">
         <AnimatedText element="h1" text="Contact" />
-      </TitleWrapper>
+      </div>
 
-      <SocialList>
-        <li>
-          <TwitterIcon />
-          <a href={TWITTER} target="_blank" rel="noreferrer">
-            @devlooskie
-          </a>
-        </li>
-        <li>
-          <GitHubIcon fill={theme.colors.primary300.toString()} />
-          <a href={GITHUB} target="_blank" rel="noreferrer">
-            @looskie
-          </a>
-        </li>
-        <li>
-          <LinkedInIcon />
-          <a href={LINKEDIN} target="_blank" rel="noreferrer">
-            @devlooskie
-          </a>
-        </li>
-        <li>
-          <InstagramIcon />
-          <a href={INSTAGRAM} target="_blank" rel="noreferrer">
-            @devlooskie
-          </a>
-        </li>
-        <li>
-          <MailIcon /> hello@looskie.com
-        </li>
-      </SocialList>
+      <ul className="flex flex-col gap-6 list-none">
+        {SOCIAL_ITEMS.map((item) => (
+          <li key={item.platform} className="flex gap-4 items-center">
+            {item.icon}
+            <a
+              href={item.link}
+              className="text-xl"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {item.handle}
+            </a>
+          </li>
+        ))}
+      </ul>
     </AnimatedPage>
   );
 }
