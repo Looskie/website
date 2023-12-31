@@ -32,8 +32,8 @@ const AnimatedText = ({
 }: IAnimatedTextProps) => {
   const Children = text.split(" ").map((word, index) => (
     <motion.span
-      className="inline-block mr-[0.25em] whitespace-nowrap"
       key={index}
+      className="inline-block mr-[0.25em] whitespace-nowrap"
       aria-hidden="true"
       initial="initial"
       animate="animate"
@@ -44,8 +44,8 @@ const AnimatedText = ({
     >
       {[...word].map((character, index) => (
         <motion.span
-          className="inline-block"
           key={index}
+          className="inline-block"
           aria-hidden="true"
           variants={characterAnimation}
         >

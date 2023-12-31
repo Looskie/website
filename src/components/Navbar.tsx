@@ -41,8 +41,8 @@ function Navbar() {
       >
         {LINKS.map((link) => (
           <motion.li
-            className="text-2xl"
             key={link}
+            className="text-2xl"
             variants={LINK_ANIMATION}
             transition={{
               // Wait for index page animation to finish

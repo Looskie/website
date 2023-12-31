@@ -3,10 +3,10 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import { cn } from "@/utils/helpers";
 import type { AppProps } from "next/app";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono as jetBrainsMono } from "next/font/google";
 import Spotify from "../components/Spotify";
 
-const JetBrains = JetBrains_Mono({
+const JetBrains = jetBrainsMono({
   preload: true,
   subsets: ["latin"],
 });

@@ -29,7 +29,9 @@ export default function useTailwindBreakpoint(): Breakpoint {
 
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return breakpoint;

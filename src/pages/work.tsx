@@ -22,8 +22,8 @@ export default function Work() {
       <div className="flex flex-col gap-[100px]">
         {WORK.map((work, index) => (
           <div
-            className="relative flex flex-col max-w-[700px]"
             key={work.company}
+            className="relative flex flex-col max-w-[700px]"
           >
             <span className="absolute -left-[45px] -top-[30px] text-5xl text-primary-100 opacity-10">
               {index.toString().padStart(2, "0")}
