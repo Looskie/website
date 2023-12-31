@@ -1,6 +1,6 @@
 # website
 
-welcome to my portfolio website built with NextJS, Stitches and TypeScript.
+welcome to my portfolio website built with NextJS, Tailwind and TypeScript.
 
 ### Reuse
 
