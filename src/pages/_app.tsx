@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Cursor />
 
       {/* 100vh - 15vh (subtract nav height) */}
-      <div className="h-[85vh] p-default-window overflow-auto bg-grid-primary-800/50">
+      <div className="w-full h-[85vh] overflow-x-hidden bg-grid-primary-800/50">
         <Component {...pageProps} />
       </div>
       <Spotify />

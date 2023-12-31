@@ -1,3 +1,8 @@
+import resolveConfig from "tailwindcss/resolveConfig";
+import tailwindConfig from "../../tailwind.config";
+
+const fullTwConfig = resolveConfig(tailwindConfig);
+
 const EMAIL = "hello@looskie.com";
 const GITHUB = "https://github.com/looskie";
 const TWITTER = "https://twitter.com/devlooskie";
@@ -80,4 +85,13 @@ const WORK = [
   },
 ];
 
-export { EMAIL, TWITTER, GITHUB, LINKEDIN, INSTAGRAM, DISCORD_ID, WORK };
+export {
+  EMAIL,
+  TWITTER,
+  GITHUB,
+  LINKEDIN,
+  INSTAGRAM,
+  DISCORD_ID,
+  WORK,
+  fullTwConfig,
+};

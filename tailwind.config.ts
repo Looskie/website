@@ -21,6 +21,7 @@ const config = {
       },
       spacing: {
         "default-window": "3.5em",
+        "default-window-sm": "2em",
       },
       colors: {
         primary: {

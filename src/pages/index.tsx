@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useEffect } from "react";
 import AnimatedText from "../components/AnimatedText";
 import { cn } from "../utils/helpers";
+import useTailwindBreakpoint from "../utils/hooks/useTailwindBreakpoint";
 
 export default function Home() {
   const horizontalBackgroundControls = useAnimation();
@@ -10,9 +11,11 @@ export default function Home() {
   const backgroundControls = useAnimation();
   const animationControls = useAnimation();
 
+  const twBreakpoint = useTailwindBreakpoint();
+
   useEffect(() => {
     const startAnimation = async () => {
-      if (window.innerWidth < 480) {
+      if (window.innerWidth < 640) {
         void animationControls.start({
           translateX: "0",
           translateY: "0",
@@ -108,12 +111,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <motion.div className="w-full h-full" animate={backgroundControls}>
+      <motion.div
+        className="w-full h-full p-default-window-sm sm:p-default-window overflow-hidden"
+        animate={backgroundControls}
+      >
         {["vertical", "horizontal"].map((direction) => (
           <motion.div
             key={direction}
             className={cn(
-              "w-full h-full fixed top-0 left-0 bg-primary-800 z-50 hidden md:block",
+              "w-full h-full fixed top-0 left-0 bg-primary-800 z-50 hidden sm:block",
               {
                 "bg-primary-700": direction === "horizontal",
               }
@@ -140,9 +146,13 @@ export default function Home() {
           <AnimatedText
             element="span"
             text="Software Engineer"
-            artificialDelay={2.5}
+            artificialDelay={twBreakpoint === "sm" ? 0 : 2.5}
           />
-          <AnimatedText element="span" text="Designer" artificialDelay={3.5} />
+          <AnimatedText
+            element="span"
+            text="Designer"
+            artificialDelay={twBreakpoint === "sm" ? 0.85 : 3.5}
+          />
         </motion.div>
       </motion.div>
     </>

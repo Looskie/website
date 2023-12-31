@@ -73,52 +73,53 @@ const SHORT_TRANSITION = {
 
 export default function Spotify() {
   const data = useLanyardWS(DISCORD_ID);
-  if (!data?.spotify) return null;
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="absolute bottom-[calc(15vh_+_4vh)] right-default-window"
-        animate={WRAPPER_ANIMATION.animate}
-        initial={WRAPPER_ANIMATION.initial}
-        exit={WRAPPER_ANIMATION.initial}
-        transition={SHORT_TRANSITION}
-      >
+      {data?.spotify ? (
         <motion.div
-          layout
-          whileHover="animate"
-          exit="initial"
-          initial="initial"
-          className="md:max-w-[350px] flex gap-2 items-center bg-primary-800 p-2 rounded-xl overflow-hidden whitespace-nowrap border border-primary-700"
+          className="absolute bottom-[calc(15vh_+_4vh)] left-default-window-sm sm:right-default-window sm:left-auto"
+          animate={WRAPPER_ANIMATION.animate}
+          initial={WRAPPER_ANIMATION.initial}
+          exit={WRAPPER_ANIMATION.initial}
+          transition={SHORT_TRANSITION}
         >
-          {data.spotify.album_art_url ? (
-            <motion.img
-              className="size-[90px] rounded-lg border border-primary-700"
-              variants={ALBUM_ART_ANIMATION}
-              src={data.spotify.album_art_url}
-              alt={`${data.spotify.song} by ${data.spotify.artist}`}
-              transition={LONG_TRANSITION}
-            />
-          ) : null}
-          <motion.span
-            className="relative min-w-[8px] min-h-[8px] rounded-full bg-green-500 mr-2"
-            variants={SPOTIFY_ICON_ANIMATION}
-            transition={SHORT_TRANSITION}
-          />
-          <div className="overflow-hidden">
-            <motion.h2
-              className="overflow-hidden text-ellipsis text-green-500 font-bold"
-              variants={SPOTIFY_LISTENING_NOW_ANIMATION}
+          <motion.div
+            layout
+            whileHover="animate"
+            exit="initial"
+            initial="initial"
+            className="max-w-[280px] md:max-w-[350px] flex gap-2 items-center bg-primary-800 p-2 rounded-xl overflow-hidden whitespace-nowrap border border-primary-700"
+          >
+            {data.spotify.album_art_url ? (
+              <motion.img
+                className="size-[90px] rounded-lg border border-primary-700"
+                variants={ALBUM_ART_ANIMATION}
+                src={data.spotify.album_art_url}
+                alt={`${data.spotify.song} by ${data.spotify.artist}`}
+                transition={LONG_TRANSITION}
+              />
+            ) : null}
+            <motion.span
+              className="relative min-w-[8px] min-h-[8px] rounded-full bg-green-500 mr-2"
+              variants={SPOTIFY_ICON_ANIMATION}
               transition={SHORT_TRANSITION}
-            >
-              Listening now
-            </motion.h2>
-            <p className="font-light overflow-hidden text-ellipsis text-[1em] mr-3">
-              {data.spotify.song} - {data.spotify.artist}
-            </p>
-          </div>
+            />
+            <div className="overflow-hidden">
+              <motion.h2
+                className="overflow-hidden text-ellipsis text-green-500 font-bold"
+                variants={SPOTIFY_LISTENING_NOW_ANIMATION}
+                transition={SHORT_TRANSITION}
+              >
+                Listening now
+              </motion.h2>
+              <p className="font-light overflow-hidden text-ellipsis text-[1em] mr-3">
+                {data.spotify.song} - {data.spotify.artist}
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      ) : null}
     </AnimatePresence>
   );
 }

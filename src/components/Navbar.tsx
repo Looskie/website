@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import useTailwindBreakpoint from "../utils/hooks/useTailwindBreakpoint";
 
 const LINK_ANIMATION = {
   animate: {
@@ -23,16 +24,17 @@ const LINKS = ["about", "work", "contact"];
 
 function Navbar() {
   const router = useRouter();
+  const twBreakpoint = useTailwindBreakpoint();
 
   return (
-    <nav className="flex fixed bottom-0 items-center h-[15vh] w-full px-default-window border-t border-primary-700 mt-auto overflow-x-auto bg-primary-900">
-      <h2 className="grow pr-default-window">
+    <nav className="flex fixed bottom-0 items-center h-[15vh] w-full px-default-window-sm sm:px-default-window border-t border-primary-700 mt-auto overflow-x-auto bg-primary-900">
+      <h2 className="grow pr-default-window-sm sm:pr-default-window">
         <Link className="capitalize text-2xl" href="/">
           <span>CM</span>
         </Link>
       </h2>
       <motion.ul
-        className="flex items-center justify-between h-full list-none pl-default-window border-l border-primary-700 gap-[80px]"
+        className="flex items-center justify-between h-full list-none pl-default-window-sm sm:pl-default-window border-l border-primary-700 gap-[80px]"
         animate="animate"
         initial="initial"
         transition={TRANSITION}
@@ -44,7 +46,7 @@ function Navbar() {
             variants={LINK_ANIMATION}
             transition={{
               // Wait for index page animation to finish
-              delay: router.pathname === "/" ? 2.5 : 0,
+              delay: router.pathname === "/" && twBreakpoint !== "sm" ? 2.5 : 0,
             }}
           >
             <Link href={`/${link}`}>{link}</Link>
