@@ -60,7 +60,7 @@ export function loadCursor(ball: HTMLDivElement) {
 
     if (getHoveredElement(event, "A")) {
       ball.style.transform = "scale(1.9)";
-      ball.style.background = fullTwConfig.theme.colors.primary[400];
+      ball.style.background = "hsl(var(--primary-400))";
       ball.setAttribute("data-hover-type", "link");
 
       hoveredElement = getHoveredElement(event, "A") as HTMLAnchorElement;
