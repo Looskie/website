@@ -5,6 +5,7 @@ import { cn } from "@/utils/helpers";
 import type { AppProps } from "next/app";
 import { JetBrains_Mono as jetBrainsMono } from "next/font/google";
 import Spotify from "../components/Spotify";
+import { Analytics } from "@vercel/analytics/react";
 
 const JetBrains = jetBrainsMono({
   preload: true,
@@ -14,6 +15,7 @@ const JetBrains = jetBrainsMono({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={cn("w-full h-full", JetBrains.className)}>
+      <Analytics />
       <Cursor />
 
       {/* 100vh - 15vh (subtract nav height) */}
