@@ -11,7 +11,21 @@ const INSTAGRAM = "https://instagram.com/devlooskie";
 
 const DISCORD_ID = "207204046115831809";
 
-const WORK = [
+type Work = {
+  company: string;
+  position: string;
+  link?: string;
+  description: string;
+};
+
+const WORK: Work[] = [
+  {
+    company: "Bloom",
+    position: "Fullstack & Android Engineer",
+    link: "https://bloomapp.com",
+    description:
+      "Bloom is an app that helps you learn to invest for building wealth long-term.",
+  },
   {
     company: "Hop Inc.",
     position: "Design & Frontend Engineer",
