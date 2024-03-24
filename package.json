@@ -10,12 +10,15 @@
     "prettier": "prettier --write ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
+    "@spotify/web-api-ts-sdk": "^1.2.0",
+    "@upstash/redis": "^1.29.0",
     "@vercel/analytics": "^1.1.1",
     "clsx": "^2.1.0",
     "framer-motion": "10.16.5",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.2.0",
     "use-lanyard": "^1.5.2"
   },
