@@ -139,7 +139,7 @@ export default function Home() {
         ))}
 
         <motion.div
-          className="relative title__wrapper z-[51]"
+          className="relative title__wrapper md:z-[51]"
           style={{
             translateX: "50%",
             translateY: "50%",
