@@ -46,6 +46,7 @@ module.exports = {
     "jsx-quotes": "off",
     "arrow-parens": ["error", "always"],
     "react/prefer-read-only-props": "off",
+    "@typescript-eslint/ban-types": "off",
     radix: "off",
   },
 };
