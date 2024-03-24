@@ -85,15 +85,21 @@ export default function Home() {
         },
       });
 
-      await animationControls.start({
-        translateX: "0",
-        translateY: "0",
+      await animationControls
+        .start({
+          translateX: "0",
+          translateY: "0",
 
-        transition: {
-          duration: 1.1,
-          ease: [0.25, 0.1, 0.35, 0.96],
-        },
-      });
+          transition: {
+            duration: 1.1,
+            ease: [0.25, 0.1, 0.35, 0.96],
+          },
+        })
+        .then(() => {
+          animationControls.set({
+            zIndex: 20,
+          });
+        });
     };
 
     void startAnimation();

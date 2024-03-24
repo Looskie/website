@@ -45,8 +45,15 @@ export default async function handler(
 
   if (req.method === "PUT") {
     const { trackId } = req.body as { trackId: string };
-    await spotify.player.addItemToPlaybackQueue(trackId);
 
+    // Check if the track id is already inside the queue
+    const queue = await spotify.player.getUsersQueue();
+    if (queue.queue.find((track) => track.uri === trackId)) {
+      res.status(200).json({ success: true });
+      return;
+    }
+
+    await spotify.player.addItemToPlaybackQueue(trackId);
     res.status(200).json({ success: true });
   }
 }

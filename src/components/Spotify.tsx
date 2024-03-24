@@ -1,7 +1,11 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/require-default-props */
+// Todo: this file is slightly messy, clean it up whenever i'm not lazy.
+
 /* eslint-disable @next/next/no-img-element */
 import { type Track } from "@spotify/web-api-ts-sdk";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useMemo, useState } from "react";
 import { type KeyedMutator } from "swr";
 import { useLanyardWS } from "use-lanyard";
 import { type SuccessQueueResponse } from "../pages/api/spotify/queue";
@@ -91,14 +95,22 @@ export default function Spotify() {
     }
   }, [data?.spotify?.track_id]);
 
-  const filteredQueue =
-    queue?.queue.filter((s) => s.id !== data?.spotify?.track_id) ?? [];
+  const sortedQueue = useMemo(() => {
+    const filteredQueue =
+      queue?.queue.filter((s) => s.id !== data?.spotify?.track_id) ?? [];
+
+    const uniqueQueue = filteredQueue.filter(
+      (track, index, self) => index === self.findIndex((t) => t.id === track.id)
+    );
+
+    return uniqueQueue;
+  }, [queue?.queue]);
 
   return (
     <AnimatePresence>
       {data?.spotify ? (
         <motion.button
-          className="absolute text-left bottom-[calc(15vh_+_4vh)] left-default-window-sm sm:right-default-window sm:left-auto outline-none"
+          className="absolute z-40 text-left bottom-[calc(15vh_+_4vh)] left-default-window-sm sm:right-default-window sm:left-auto outline-none"
           animate={WRAPPER_ANIMATION.animate}
           initial={WRAPPER_ANIMATION.initial}
           exit={WRAPPER_ANIMATION.initial}
@@ -144,8 +156,8 @@ export default function Spotify() {
               </div>
             </div>
             <AnimatePresence>
-              {expanded && filteredQueue.length > 0 ? (
-                <Queue queue={filteredQueue} refetchQuerys={mutate} />
+              {expanded && sortedQueue.length > 0 ? (
+                <Queue queue={sortedQueue} refetchQuerys={mutate} />
               ) : null}
             </AnimatePresence>
           </motion.div>
@@ -158,9 +170,16 @@ export default function Spotify() {
 const QUEUE_ANIMATION = {
   animate: {
     height: "auto",
+    opacity: 1,
   },
   initial: {
     height: 0,
+    opacity: 0,
+  },
+  exit: {
+    height: 0,
+    opacity: 0,
+    width: 0,
   },
 };
 
@@ -189,12 +208,30 @@ function Queue({
   const [mode, setMode] = useState<"queue" | "search">("queue");
   const [query, setQuery] = useState("");
 
-  const debouncedQuery = useDebounce(query, 500);
-  const { songs } = useSpotifySearch(debouncedQuery);
+  const debouncedQuery = useDebounce(query, 200);
+  const { songs, isLoading } = useSpotifySearch(debouncedQuery);
+
+  const addSongToQueue = (trackId: string) => {
+    void fetch(`/api/spotify/queue`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ trackId }),
+    }).then(() => {
+      setQuery("");
+      setMode("queue");
+
+      // Let the animation run a bit.
+      setTimeout(() => {
+        void refetchQuerys();
+      }, 500);
+    });
+  };
 
   return (
     <motion.div
-      exit={QUEUE_ANIMATION.initial}
+      exit={QUEUE_ANIMATION.exit}
       initial={QUEUE_ANIMATION.initial}
       animate={QUEUE_ANIMATION.animate}
       className="flex w-full cursor-default"
@@ -202,7 +239,7 @@ function Queue({
         e.stopPropagation();
       }}
     >
-      <div className="flex flex-col mt-4 h-[300px] w-full overflow-auto">
+      <div className="flex flex-col mt-4 h-[300px] w-[280px] md:w-[350px] overflow-auto">
         <div className="flex justify-between items-center">
           <h1 className="text-xl">{mode === "queue" ? "Queue" : "Search"}</h1>
           <button
@@ -224,7 +261,7 @@ function Queue({
               exit={QUEUE_MODE_ANIMATION.exit}
               className="flex flex-col gap-3 mt-4"
             >
-              <AnimatePresence mode="popLayout">
+              <AnimatePresence>
                 {queue.map((song, i) => (
                   <IndividualTrack
                     key={song.id}
@@ -249,42 +286,41 @@ function Queue({
                 onChange={({ target: { value } }) => {
                   setQuery(value);
                 }}
+                onKeyUp={(e) => {
+                  e.preventDefault();
+                }}
               />
               <div className="flex flex-col w-full gap-3 flex-1">
-                {query.length === 0 ? (
+                {isLoading ||
+                query.length === 0 ||
+                (songs?.tracks?.items?.length ?? 0) < 0 ? (
                   <div className="flex flex-1 items-center justify-center w-full h-full">
                     <div className="flex flex-col w-full text-center gap-1">
                       <h1 className="text-lg">Search</h1>
                       <p className="text-sm text-primary-400">
-                        Have a sick song I should listen to?
-                        <br />
-                        add it to the queue.
+                        {isLoading ? (
+                          "Loading results"
+                        ) : (
+                          <>
+                            Have a sick song I should listen to?
+                            <br />
+                            add it to the queue.
+                          </>
+                        )}
                       </p>
                     </div>
                   </div>
-                ) : (songs?.tracks?.items?.length ?? 0) > 0 ? (
+                ) : (
                   songs?.tracks.items.map((t, i) => (
                     <IndividualTrack
-                      key={t.id}
+                      key={i}
                       track={t}
                       onAdd={() => {
-                        void fetch(`/api/spotify/queue`, {
-                          method: "PUT",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({ trackId: t.uri }),
-                        }).then(() => {
-                          setQuery("");
-                          setMode("queue");
-                          setTimeout(() => {
-                            void refetchQuerys();
-                          }, 500);
-                        });
+                        addSongToQueue(t.uri);
                       }}
                     />
                   ))
-                ) : null}
+                )}
               </div>
             </motion.div>
           )}
@@ -294,35 +330,34 @@ function Queue({
   );
 }
 
-function IndividualTrack({
-  track,
-  queuePosition,
-  onAdd,
-}: {
-  track: Track;
-  queuePosition?: number;
-  onAdd?: () => void;
-}) {
+const IndividualTrack = forwardRef<
+  HTMLDivElement,
+  {
+    track: Track;
+    queuePosition?: number;
+    onAdd?: () => void;
+  }
+>(({ track, queuePosition, onAdd }, ref) => {
   const trackAlbumCover = track.album.images?.[0]?.url;
+  const artists = track.artists.map((a) => a.name).join(", ");
 
   return (
     <motion.div
+      ref={ref}
       layout
       className="flex gap-4 items-center w-full truncate origin-bottom-left"
     >
       {trackAlbumCover ? (
         <img
           src={trackAlbumCover}
-          className="size-14 rounded-lg"
-          alt={track.name}
+          className="size-14 rounded-lg p-0 flex-shrink-0 bg-primary-700"
+          alt={`${track.name} by ${artists}`}
         />
       ) : null}
 
       <div className="flex flex-col w-full truncate">
         <p className="truncate">{track.name}</p>
-        <span className="text-sm text-primary-400">
-          {track.artists.map((a) => a.name).join(", ")}
-        </span>
+        <span className="text-sm text-primary-400">{artists}</span>
       </div>
 
       {queuePosition ? (
@@ -340,4 +375,6 @@ function IndividualTrack({
       )}
     </motion.div>
   );
-}
+});
+
+IndividualTrack.displayName = "IndividualTrack";
