@@ -211,8 +211,8 @@ function Queue({
   const debouncedQuery = useDebounce(query, 200);
   const { songs, isLoading } = useSpotifySearch(debouncedQuery);
 
-  const addSongToQueue = (trackId: string) => {
-    void fetch(`/api/spotify/queue`, {
+  const addSongToQueue = async (trackId: string) => {
+    await fetch(`/api/spotify/queue`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -315,8 +315,8 @@ function Queue({
                     <IndividualTrack
                       key={i}
                       track={t}
-                      onAdd={() => {
-                        addSongToQueue(t.uri);
+                      onAdd={async () => {
+                        await addSongToQueue(t.uri);
                       }}
                     />
                   ))
@@ -338,6 +338,8 @@ const IndividualTrack = forwardRef<
     onAdd?: () => void;
   }
 >(({ track, queuePosition, onAdd }, ref) => {
+  const [adding, setAdding] = useState(false);
+
   const trackAlbumCover = track.album.images?.[0]?.url;
   const artists = track.artists.map((a) => a.name).join(", ");
 
@@ -367,8 +369,12 @@ const IndividualTrack = forwardRef<
       ) : (
         <button
           type="button"
-          className="text-xs bg-primary-700 text-primary-300 px-2 py-1 rounded-lg border border-primary-600 transition-colors hover:bg-primary-600 hover:border-primary-400 hover:text-primary-200"
-          onClick={onAdd}
+          className="text-xs bg-primary-700 text-primary-300 px-2 py-1 rounded-lg border border-primary-600 transition-colors hover:bg-primary-600 hover:border-primary-400 hover:text-primary-200 disabled:opacity-80"
+          disabled={adding}
+          onClick={async () => {
+            setAdding(true);
+            onAdd?.();
+          }}
         >
           Add
         </button>
