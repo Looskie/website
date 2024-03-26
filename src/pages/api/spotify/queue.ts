@@ -26,7 +26,8 @@ function imcrying(text: string) {
     text.toLowerCase().includes("noise") ||
     text.toLowerCase().includes("alarm") ||
     text.toLowerCase().includes("effects") ||
-    text.toLowerCase().includes("farts")
+    text.toLowerCase().includes("farts") ||
+    text.toLowerCase().includes("silence")
   );
 }
 
