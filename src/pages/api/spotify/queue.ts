@@ -26,12 +26,15 @@ function imcrying(text: string) {
     text.toLowerCase().includes("noise") ||
     text.toLowerCase().includes("alarm") ||
     text.toLowerCase().includes("effects") ||
-    text.toLowerCase().includes("farts") ||
+    text.toLowerCase().includes("fart") ||
     text.toLowerCase().includes("silence") ||
     text.toLowerCase().includes("peace") ||
     text.toLowerCase().includes("relax") ||
     text.toLowerCase().includes("sleep") ||
-    text.toLowerCase().includes("shutdown")
+    text.toLowerCase().includes("shutdown") ||
+    text.toLowerCase().includes("breathing") ||
+    text.toLowerCase().includes("sex") ||
+    text.toLowerCase().includes("orgasm")
   );
 }
 
