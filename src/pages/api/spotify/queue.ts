@@ -57,11 +57,11 @@ export default async function handler(
 
     // BAN ALL WHITE NOISE TRACKS
     const track = await spotify.tracks.get(trackId);
-    if (track.name.toLowerCase().includes("white n")) {
+    if (track.name.toLowerCase().includes("noise")) {
       res.status(400).json({
         success: false,
         error: {
-          message: "please no more white noise :(",
+          message: "NO MORE SONGS WITH noise :(",
         },
       });
 
