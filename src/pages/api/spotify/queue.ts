@@ -19,6 +19,8 @@ export type ErrorQueueResponse = {
   };
 };
 
+const TEN_MINUTES_IN_MS = 600000;
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SuccessQueueResponse | ErrorQueueResponse>
@@ -48,12 +50,36 @@ export default async function handler(
 
     // Check if the track id is already inside the queue
     const queue = await spotify.player.getUsersQueue();
-    if (queue.queue.find((track) => track.uri === trackId)) {
+    if (queue.queue.find((track) => track.id === trackId)) {
       res.status(200).json({ success: true });
       return;
     }
 
-    await spotify.player.addItemToPlaybackQueue(trackId);
+    // BAN ALL WHITE NOISE TRACKS
+    const track = await spotify.tracks.get(trackId);
+    if (track.name.toLowerCase().includes("white n")) {
+      res.status(400).json({
+        success: false,
+        error: {
+          message: "please no more white noise :(",
+        },
+      });
+
+      return;
+    }
+
+    if (track.duration_ms > TEN_MINUTES_IN_MS) {
+      res.status(400).json({
+        success: false,
+        error: {
+          message: "track is too long (under 10m please)",
+        },
+      });
+
+      return;
+    }
+
+    await spotify.player.addItemToPlaybackQueue(track.uri);
     res.status(200).json({ success: true });
   }
 }

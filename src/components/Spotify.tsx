@@ -218,15 +218,29 @@ function Queue({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ trackId }),
-    }).then(() => {
-      setQuery("");
-      setMode("queue");
+    })
+      .then(
+        async (req) =>
+          req.json() as unknown as {
+            success: boolean;
+            error?: { message: string };
+          }
+      )
+      .then((res) => {
+        if (!res.success) {
+          // eslint-disable-next-line no-alert
+          alert(res.error?.message ?? "Failed to add song to queue");
+          return;
+        }
 
-      // Let the animation run a bit.
-      setTimeout(() => {
-        void refetchQuerys();
-      }, 500);
-    });
+        setQuery("");
+        setMode("queue");
+
+        // Let the animation run a bit.
+        setTimeout(() => {
+          void refetchQuerys();
+        }, 500);
+      });
   };
 
   return (
@@ -316,7 +330,7 @@ function Queue({
                       key={i}
                       track={t}
                       onAdd={async () => {
-                        await addSongToQueue(t.uri);
+                        await addSongToQueue(t.id);
                       }}
                     />
                   ))
