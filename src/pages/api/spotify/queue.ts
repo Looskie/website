@@ -68,9 +68,8 @@ export default async function handler(
       error: {
         message: "too many people are abusing this, im disabling for now :<",
       },
-
-    })
-/*     const { trackId } = req.body as { trackId: string };
+    });
+    /*     Const { trackId } = req.body as { trackId: string };
 
     // Check if the track id is already inside the queue
     const queue = await spotify.player.getUsersQueue();
@@ -106,4 +105,5 @@ export default async function handler(
     await spotify.player.addItemToPlaybackQueue(track.uri);
     res.status(200).json({ success: true });
   } */
+  }
 }
