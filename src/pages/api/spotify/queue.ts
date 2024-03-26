@@ -34,7 +34,8 @@ function imcrying(text: string) {
     text.toLowerCase().includes("shutdown") ||
     text.toLowerCase().includes("breathing") ||
     text.toLowerCase().includes("sex") ||
-    text.toLowerCase().includes("orgasm")
+    text.toLowerCase().includes("orgasm") ||
+    text.toLowerCase().includes("sound")
   );
 }
 
