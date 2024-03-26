@@ -21,6 +21,14 @@ export type ErrorQueueResponse = {
 
 const TEN_MINUTES_IN_MS = 600000;
 
+function imcrying(text: string) {
+  return (
+    text.toLowerCase().includes("noise") ||
+    text.toLowerCase().includes("alarm") ||
+    text.toLowerCase().includes("effects")
+  );
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SuccessQueueResponse | ErrorQueueResponse>
@@ -57,7 +65,7 @@ export default async function handler(
 
     // BAN ALL WHITE NOISE TRACKS
     const track = await spotify.tracks.get(trackId);
-    if (track.name.toLowerCase().includes("noise")) {
+    if (imcrying(track.name) || imcrying(track.artists[0].name)) {
       res.status(400).json({
         success: false,
         error: {
