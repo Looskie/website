@@ -38,6 +38,8 @@ function imcrying(text: string) {
   );
 }
 
+const ADD_TO_QUEUE_ENABLED = true;
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<SuccessQueueResponse | ErrorQueueResponse>
@@ -63,13 +65,18 @@ export default async function handler(
   }
 
   if (req.method === "PUT") {
-    res.status(400).json({
-      success: false,
-      error: {
-        message: "too many people are abusing this, im disabling for now :<",
-      },
-    });
-    /*     Const { trackId } = req.body as { trackId: string };
+    if (!ADD_TO_QUEUE_ENABLED) {
+      res.status(400).json({
+        success: false,
+        error: {
+          message: "too many people are abusing this, im disabling for now :<",
+        },
+      });
+
+      return;
+    }
+
+    const { trackId } = req.body as { trackId: string };
 
     // Check if the track id is already inside the queue
     const queue = await spotify.player.getUsersQueue();
@@ -104,6 +111,5 @@ export default async function handler(
 
     await spotify.player.addItemToPlaybackQueue(track.uri);
     res.status(200).json({ success: true });
-  } */
   }
 }
