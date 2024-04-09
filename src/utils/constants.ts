@@ -57,7 +57,7 @@ const WORK: Work[] = [
   {
     company: "Capybara tic-tac-toe",
     position: "Fullstack Engineer",
-    link: "https://tic-tac-toe.capy.lol/",
+    link: "https://tictactoe.capy.lol/",
     description:
       "Proof-of-concept for a multiplayer tic-tac-toe game using Hop Channels",
   },
