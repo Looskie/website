@@ -156,7 +156,7 @@ export default function Spotify() {
               </div>
             </div>
             <AnimatePresence>
-              {expanded && sortedQueue.length > 0 ? (
+              {expanded ? (
                 <Queue queue={sortedQueue} refetchQuerys={mutate} />
               ) : null}
             </AnimatePresence>
