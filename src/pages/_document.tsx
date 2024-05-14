@@ -34,8 +34,8 @@ export default function Document() {
         <meta name="theme-color" content="#171717" />
 
         {/* Before anyone flames me for install jquery, this is just a test for c/side */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
-          async
           src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
           type="text/javascript"
         />
