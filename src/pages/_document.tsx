@@ -1,15 +1,16 @@
 import { Head, Html, Main, NextScript } from "next/document";
+import { CSideScript } from "@c-side/react";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <CSideScript />
         <meta charSet="UTF-8" />
         <meta
           name="keywords"
           content="Developer, Devlooskie, DEVLOOSKIE, looskie, looskie, dev, developer ui, ui, ux, html, js, css, looskie.com, looskieee, twitter, instagram, frontend webdeveloper, frontend webdeveloper windsor, windsor, whs, web, webdeveloper, designs, "
         />
-
         <link
           rel="apple-touch-icon"
           sizes="180x180"

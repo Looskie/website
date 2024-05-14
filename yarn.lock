@@ -19,6 +19,11 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@c-side/react@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@c-side/react/-/react-1.0.2.tgz#a6eb304b29452eef2e139cded94fee0e6fa6db7e"
+  integrity sha512-2gaM126YZsD1w/PyqgRSDjdc2dYSDs2Q6iL0K9LMhlVxq+LwVUTfIYzpJ14jGeNwWU59IIVYYxFLQlegadQFbQ==
+
 "@csstools/selector-specificity@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-3.0.1.tgz#d84597fbc0f897240c12fc0a31e492b036c70e40"
