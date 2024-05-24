@@ -5,7 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <CSideScript />
         <meta charSet="UTF-8" />
         <meta
           name="keywords"
