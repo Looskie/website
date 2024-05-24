@@ -10,7 +10,7 @@
     "prettier": "prettier --write ./src/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@c-side/react": "^1.0.3",
+    "@c-side/react": "^1.0.2",
     "@spotify/web-api-ts-sdk": "^1.2.0",
     "@upstash/ratelimit": "^1.0.1",
     "@upstash/redis": "^1.29.0",
