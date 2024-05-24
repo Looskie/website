@@ -20,6 +20,13 @@ type Work = {
 
 const WORK: Work[] = [
   {
+    company: "c/side",
+    position: "Fullstack Engineer",
+    link: "https://cside.dev/",
+    description:
+      "Monitor, secure, and optimize your 3rd party scripts on your website with c/side. You'll know what gets delivered to your user's browser 100% of the time.",
+  },
+  {
     company: "Bloom",
     position: "Fullstack & Android Engineer",
     link: "https://bloomapp.com",

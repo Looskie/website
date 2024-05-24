@@ -1,6 +1,7 @@
 import Head from "next/head";
 import AnimatedText from "../components/AnimatedText";
 import AnimatedPage from "../components/PageWrapper";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -26,6 +27,14 @@ export default function About() {
         the united states. i strive to build unique and polished web interfaces
         for both consumer and business ends. i love lacrosse, capybaras, and
         writing open source software!
+      </p>
+
+      <br />
+      <p>
+        I'm currently working at{" "}
+        <Link href="https://cside.dev/" target="_blank">
+          c/side
+        </Link>
       </p>
     </AnimatedPage>
   );
