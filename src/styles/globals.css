@@ -138,3 +138,37 @@ a {
     width: 100%;
   }
 }
+
+.blog {
+  p {
+    @apply font-light text-[17px] text-primary-100;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold first-of-type:mt-0 mt-10;
+
+    &::before {
+      content: '"';
+    }
+
+    &::after {
+      content: '"';
+    }
+  }
+
+  h3 {
+    @apply text-xl font-semibold mt-4;
+
+    &::before {
+      content: "'";
+    }
+
+    &::after {
+      content: "'";
+    }
+  }
+
+  pre {
+    @apply w-full bg-primary-800 text-primary-100 p-4 overflow-auto rounded-xl shadow-lg;
+  }
+}

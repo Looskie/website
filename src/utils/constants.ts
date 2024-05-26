@@ -18,7 +18,15 @@ type Work = {
   description: string;
 };
 
-const WORK: Work[] = [
+type BlogPost = {
+  title: string;
+  description: string;
+  slug: string;
+  writtenAt: Date;
+  updatedAt?: Date;
+};
+
+const WORK = [
   {
     company: "c/side",
     position: "Fullstack Engineer",
@@ -104,7 +112,17 @@ const WORK: Work[] = [
     description:
       "A customizable and super fast badge for displaying hits for any link",
   },
-];
+] as const satisfies Work[];
+
+const BLOG_POSTS = [
+  {
+    title: "My Favorite Hook... Ever. (the useImperativeHandle hook)",
+    description:
+      "The useImperativeHandle is a vastly underrated hook in React. In this blog post I talk about how I use it to create flexible and reusable components.",
+    slug: "my-favorite-hook",
+    writtenAt: new Date("2024-06-26"),
+  },
+] as const satisfies BlogPost[];
 
 export {
   EMAIL,
@@ -114,5 +132,6 @@ export {
   INSTAGRAM,
   DISCORD_ID,
   WORK,
+  BLOG_POSTS,
   fullTwConfig,
 };
