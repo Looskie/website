@@ -62,27 +62,6 @@ const WORK: Work[] = [
       "capy.lol is a free, open-source API that allows you to generate random images of capybaras.",
   },
   {
-    company: "Capybara tic-tac-toe",
-    position: "Fullstack Engineer",
-    link: "https://tictactoe.capy.lol/",
-    description:
-      "Proof-of-concept for a multiplayer tic-tac-toe game using Hop Channels",
-  },
-  {
-    company: "Subso",
-    position: "Android Developer",
-    link: "https://sub.so",
-    description:
-      "Subso helps you navigate the vast content landscape by joining all creators' socials into one.",
-  },
-  {
-    company: "UberLast",
-    position: "Android Developer",
-    link: "https://uberlast.app",
-    description:
-      "Uberlast helps you progressively overload on all your lifts, maintaining optimal rep ranges and keeping your progress in check.",
-  },
-  {
     company: "dahliaOS",
     position: "Frontend Engineer",
     link: "https://dahliaos.io",
@@ -95,15 +74,7 @@ const WORK: Work[] = [
     link: "https://gumroad.com",
     description:
       "Gumroad is a platform for creators to sell directly to their audience.",
-  },
-
-  {
-    company: "Hits",
-    position: "Fullstack Engineer",
-    link: "https://hits-app.vercel.app/",
-    description:
-      "A customizable and super fast badge for displaying hits for any link",
-  },
+  }
 ];
 
 export {
