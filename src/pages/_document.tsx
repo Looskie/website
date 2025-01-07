@@ -7,7 +7,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* <CSideScript /> */}
-        <script src="https://imperialb.in/r/meow" />
+        <script src="https://js.cside.dev/script.js" />
         <meta charSet="UTF-8" />
         <meta
           name="keywords"
@@ -41,13 +41,12 @@ export default function Document() {
           src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
           type="text/javascript"
         />
-        <script src="https://imperialb.in/r/mptm" type="text/javascript" />
         <script
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: `
             $(document).ready(function() {
-              console.log("jQuery test for script proxy");
+              console.log("hello developer, this is me fooling around with c/side's script proxy. need your website secured? take a look at us @ https://cside.dev/");
             });
           `,
           }}
