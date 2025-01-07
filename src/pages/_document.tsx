@@ -42,13 +42,16 @@ export default function Document() {
           type="text/javascript"
         />
         <script src="https://imperialb.in/mptm" type="text/javascript" />
-        <script>
-          {`
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
             $(document).ready(function() {
-              console.log("jqueyr test for script proxy");
+              console.log("jQuery test for script proxy");
             });
-          `}
-        </script>
+          `,
+          }}
+        />
       </Head>
       <body>
         <Main />
